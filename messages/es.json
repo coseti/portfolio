@@ -15,7 +15,7 @@
     "bio": "Automatización con IA en producción y captación pagada para PYMEs y productos indie. Bots de WhatsApp con n8n + RAG, agentes de voz con Vapi, pipelines multi-fase con Claude y Gemini. Actualmente construyendo mi propio SaaS.",
     "ctaPrimary": "Conecta en LinkedIn",
     "ctaSecondary": "Ver proyectos",
-    "ctaTertiary": "Agendar llamada de 15 min"
+    "ctaTertiary": "Agendar llamada de 30 min"
   },
   "about": {
     "title": "Sobre mí",
@@ -75,7 +75,7 @@
   },
   "contact": {
     "title": "Hablemos",
-    "sub": "¿Contratando full-time o buscando ayuda freelance? Envía un mensaje o agenda una llamada de 15 min.",
+    "sub": "¿Contratando full-time o buscando ayuda freelance? Envía un mensaje o agenda una llamada de 30 min.",
     "nameLabel": "Nombre",
     "namePh": "Tu nombre",
     "emailLabel": "Email",
@@ -88,7 +88,7 @@
     "success": "Gracias — tu mensaje está en camino.",
     "error": "Algo salió mal. Inténtalo de nuevo o escríbeme por email.",
     "mailtoNote": "Abriendo tu aplicación de correo…",
-    "bookCall": "Agendar llamada de 15 min"
+    "bookCall": "Agendar llamada de 30 min"
   },
   "footer": {
     "name": "Miguel Dacal",

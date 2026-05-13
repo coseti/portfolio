@@ -15,7 +15,7 @@
     "bio": "Production AI automation and paid acquisition for SMBs and indie products. WhatsApp bots with n8n + RAG, voice agents with Vapi, multi-phase pipelines with Claude and Gemini. Currently building my own SaaS.",
     "ctaPrimary": "Connect on LinkedIn",
     "ctaSecondary": "View projects",
-    "ctaTertiary": "Book a 15-min call"
+    "ctaTertiary": "Book a 30-min call"
   },
   "about": {
     "title": "About",
@@ -75,7 +75,7 @@
   },
   "contact": {
     "title": "Let's talk",
-    "sub": "Hiring full-time or looking for freelance help? Send a message or book a 15-min call.",
+    "sub": "Hiring full-time or looking for freelance help? Send a message or book a 30-min call.",
     "nameLabel": "Name",
     "namePh": "Your name",
     "emailLabel": "Email",
@@ -88,7 +88,7 @@
     "success": "Thanks — your message is on its way.",
     "error": "Something went wrong. Please try again or email me directly.",
     "mailtoNote": "Opening your email app…",
-    "bookCall": "Book a 15-min call"
+    "bookCall": "Book a 30-min call"
   },
   "footer": {
     "name": "Miguel Dacal",
