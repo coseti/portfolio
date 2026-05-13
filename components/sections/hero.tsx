@@ -1,4 +1,5 @@
 import {useTranslations} from 'next-intl';
+import {CalButton} from '@/components/cal-button';
 
 export function Hero() {
   const t = useTranslations('hero');
@@ -50,12 +51,9 @@ export function Hero() {
           >
             {t('ctaSecondary')}
           </a>
-          <a
-            href="#contact"
-            className="inline-flex items-center gap-2 rounded-full border border-border px-5 py-3 text-sm font-medium text-foreground transition-all hover:border-primary hover:text-primary active:translate-y-px"
-          >
+          <CalButton className="inline-flex items-center gap-2 rounded-full border border-border px-5 py-3 text-sm font-medium text-foreground transition-all hover:border-primary hover:text-primary active:translate-y-px">
             {t('ctaTertiary')}
-          </a>
+          </CalButton>
         </div>
       </div>
     </section>

@@ -2,6 +2,7 @@
 
 import {useTranslations} from 'next-intl';
 import {useState, type FormEvent} from 'react';
+import {CalButton} from '@/components/cal-button';
 
 const EMAIL = 'miguelcoseti@gmail.com';
 const FORMSPREE_ID = process.env.NEXT_PUBLIC_FORMSPREE_ID ?? '';
@@ -177,16 +178,13 @@ export function Contact() {
                 </a>
               </li>
               <li>
-                <a
-                  href="#contact"
-                  className="inline-flex w-full items-center gap-3 rounded-[10px] border border-border bg-surface px-4 py-2.5 text-[0.95rem] transition-all hover:border-primary hover:bg-primary-soft hover:text-primary"
-                >
+                <CalButton className="inline-flex w-full items-center gap-3 rounded-[10px] border border-border bg-surface px-4 py-2.5 text-[0.95rem] transition-all hover:border-primary hover:bg-primary-soft hover:text-primary">
                   <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <rect x="3" y="4" width="18" height="18" rx="2" />
                     <path d="M16 2v4M8 2v4M3 10h18" />
                   </svg>
                   {t('bookCall')}
-                </a>
+                </CalButton>
               </li>
             </ul>
           </aside>

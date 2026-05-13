@@ -5,6 +5,7 @@ import {Inter, Fraunces, JetBrains_Mono} from 'next/font/google';
 import {routing} from '@/i18n/routing';
 import {Nav} from '@/components/nav';
 import {ThemeScript} from '@/components/theme-script';
+import {CalInit} from '@/components/cal-init';
 import '../globals.css';
 
 const inter = Inter({
@@ -66,6 +67,7 @@ export default async function LocaleLayout({
     <html
       lang={locale}
       data-theme="dark"
+      suppressHydrationWarning
       className={`${inter.variable} ${fraunces.variable} ${jetbrainsMono.variable} h-full antialiased`}
     >
       <head>
@@ -75,6 +77,7 @@ export default async function LocaleLayout({
         <NextIntlClientProvider>
           <Nav />
           {children}
+          <CalInit />
         </NextIntlClientProvider>
       </body>
     </html>
