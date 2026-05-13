@@ -1,0 +1,97 @@
+{
+  "a11y": {
+    "skip": "Saltar al contenido"
+  },
+  "nav": {
+    "about": "Sobre mí",
+    "projects": "Proyectos",
+    "skills": "Stack",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "eyebrow": "Open to work · Madrid",
+    "title": "Miguel Dacal",
+    "tagline": "Del clic en el anuncio a la cita agendada — automatización con IA y growth, end to end.",
+    "bio": "Automatización con IA en producción y captación pagada para PYMEs y productos indie. Bots de WhatsApp con n8n + RAG, agentes de voz con Vapi, pipelines multi-fase con Claude y Gemini. Actualmente construyendo mi propio SaaS.",
+    "ctaPrimary": "Conecta en LinkedIn",
+    "ctaSecondary": "Ver proyectos",
+    "ctaTertiary": "Agendar llamada de 15 min"
+  },
+  "about": {
+    "title": "Sobre mí",
+    "p1": "Soy un builder autodidacta que monta automatizaciones con IA en producción. Antes pasé 15 años como funcionario en España — y en 2020 lo dejé voluntariamente para reinventarme. 16 meses en Sídney construyendo mi base de inglés, un Ciclo de Grado Superior en Desarrollo de Aplicaciones Multiplataforma, y desde 2024 trabajo full-time en sistemas de IA y growth.",
+    "p2": "Hoy llevo mi propia práctica end-to-end — bots de WhatsApp, agentes de voz, pipelines de anuncios, embudos paid — mientras construyo en solitario un SaaS de research de contenido viral. Certified Implementer en AI Automation por Dania.ai. Me importan los sistemas que realmente envían y sobreviven al contacto con producción.",
+    "locationLabel": "Ubicación",
+    "locationValue": "Madrid · Híbrido o remoto",
+    "focusLabel": "Enfoque",
+    "focusValue": "Automatización con IA · Growth pago",
+    "statusLabel": "Estado",
+    "statusValue": "Open to work · Disponible para freelance"
+  },
+  "projects": {
+    "title": "Proyectos destacados",
+    "sub": "Trabajo en producción y lo que estoy construyendo ahora.",
+    "live": "Demo",
+    "code": "GitHub",
+    "case": "Caso de estudio",
+    "p1": {
+      "title": "SaaS de Investigación de Contenido Viral",
+      "desc": "Fundador en solitario. Un SaaS que detecta patrones virales en YouTube y automatiza todo el flujo de research: análisis de fuentes, estrategia, generación de guiones y storyboards.",
+      "tags": "FastAPI · Supabase + pgvector · Celery · Redis · Next.js · Multi-agente · Claude Code",
+      "status": "En desarrollo"
+    },
+    "p2": {
+      "title": "Bot de Cualificación de Leads en WhatsApp",
+      "desc": "Bot en producción que cualifica leads entrantes end-to-end y agenda citas cualificadas en Cal.com sin intervención humana.",
+      "tags": "n8n · WhatsApp Business API · RAG · Cal.com",
+      "status": "En producción"
+    },
+    "p3": {
+      "title": "Agente de Voz IA con Booking",
+      "desc": "Agente de voz con Vapi + RAG sobre bases de conocimiento privadas. Gestiona llamadas entrantes, cualifica y agenda citas sin humano en el bucle.",
+      "tags": "Vapi · RAG · Cal.com",
+      "status": "En producción"
+    },
+    "p4": {
+      "title": "Pipeline Multifase de Generación de Anuncios",
+      "desc": "Pipeline end-to-end para creativos: scraping de ads de la competencia → análisis visual → generación de guiones → vídeo. Totalmente automatizado.",
+      "tags": "Apify · Gemini Vision · Claude · Veo 3 · n8n",
+      "status": "En producción"
+    },
+    "p5": {
+      "title": "Embudos de Adquisición Pagada End-to-end",
+      "desc": "Dos embudos completos entregados: landing, campañas de Google Ads, tracking con GTM, dashboards en GA4, segmentación de audiencias, keyword research e iteración creativa.",
+      "tags": "Google Ads · GTM · GA4 · WordPress · Paid Media",
+      "status": "Entregados"
+    }
+  },
+  "skills": {
+    "title": "Stack",
+    "sub": "Herramientas y tecnologías con las que trabajo cada día.",
+    "aiAutomation": "IA y Automatización",
+    "backend": "Backend y Datos",
+    "growth": "Growth y Marketing",
+    "tools": "Herramientas"
+  },
+  "contact": {
+    "title": "Hablemos",
+    "sub": "¿Contratando full-time o buscando ayuda freelance? Envía un mensaje o agenda una llamada de 15 min.",
+    "nameLabel": "Nombre",
+    "namePh": "Tu nombre",
+    "emailLabel": "Email",
+    "emailPh": "tu@ejemplo.com",
+    "messageLabel": "Mensaje",
+    "messagePh": "Cuéntame brevemente en qué estás trabajando…",
+    "submit": "Enviar mensaje",
+    "sideLead": "O contáctame directamente.",
+    "sending": "Enviando…",
+    "success": "Gracias — tu mensaje está en camino.",
+    "error": "Algo salió mal. Inténtalo de nuevo o escríbeme por email.",
+    "mailtoNote": "Abriendo tu aplicación de correo…",
+    "bookCall": "Agendar llamada de 15 min"
+  },
+  "footer": {
+    "name": "Miguel Dacal",
+    "rights": "Todos los derechos reservados."
+  }
+}

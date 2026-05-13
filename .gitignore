@@ -39,3 +39,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# local backup of the previous HTML portfolio (~25MB) — not deployed
+/legacy

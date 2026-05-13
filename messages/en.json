@@ -1,0 +1,97 @@
+{
+  "a11y": {
+    "skip": "Skip to content"
+  },
+  "nav": {
+    "about": "About",
+    "projects": "Projects",
+    "skills": "Skills",
+    "contact": "Contact"
+  },
+  "hero": {
+    "eyebrow": "Open to work · Madrid",
+    "title": "Miguel Dacal",
+    "tagline": "From ad click to booked appointment — AI automation and paid growth, end to end.",
+    "bio": "Production AI automation and paid acquisition for SMBs and indie products. WhatsApp bots with n8n + RAG, voice agents with Vapi, multi-phase pipelines with Claude and Gemini. Currently building my own SaaS.",
+    "ctaPrimary": "Connect on LinkedIn",
+    "ctaSecondary": "View projects",
+    "ctaTertiary": "Book a 15-min call"
+  },
+  "about": {
+    "title": "About",
+    "p1": "I'm a self-taught builder shipping production AI automation. Before that, I spent 15 years as a tenured civil servant in Spain — then deliberately walked away in 2020 to reinvent myself. Sixteen months in Sydney to build my English foundation, a Higher Vocational Diploma in software development, and since 2024 I've been full-time on AI systems and growth.",
+    "p2": "Today I run my own end-to-end practice — WhatsApp bots, voice AI agents, ad pipelines, paid funnels — while building a viral content research SaaS solo. Certified Implementer for AI Automation by Dania.ai. I care about systems that actually ship and survive contact with production.",
+    "locationLabel": "Location",
+    "locationValue": "Madrid · Hybrid or remote",
+    "focusLabel": "Focus",
+    "focusValue": "AI automation · Paid growth",
+    "statusLabel": "Status",
+    "statusValue": "Open to work · Open to freelance"
+  },
+  "projects": {
+    "title": "Selected projects",
+    "sub": "Production work and what I'm currently shipping.",
+    "live": "Live demo",
+    "code": "GitHub",
+    "case": "Case study",
+    "p1": {
+      "title": "Viral Content Research SaaS",
+      "desc": "Solo founder. A SaaS that detects viral patterns across YouTube and automates the full research workflow: source analysis, strategy, script and storyboard generation.",
+      "tags": "FastAPI · Supabase + pgvector · Celery · Redis · Next.js · Multi-agent · Claude Code",
+      "status": "Currently shipping"
+    },
+    "p2": {
+      "title": "WhatsApp Lead Qualification Bot",
+      "desc": "Production bot that qualifies inbound leads end-to-end and books qualified appointments in Cal.com with zero human intervention.",
+      "tags": "n8n · WhatsApp Business API · RAG · Cal.com",
+      "status": "In production"
+    },
+    "p3": {
+      "title": "Voice AI Booking Agent",
+      "desc": "Voice agent built with Vapi + RAG over private knowledge bases. Handles inbound calls, qualifies, and books appointments without a human in the loop.",
+      "tags": "Vapi · RAG · Cal.com",
+      "status": "In production"
+    },
+    "p4": {
+      "title": "Multi-phase Ad Generation Pipeline",
+      "desc": "End-to-end pipeline for ad creatives: competitor ad scraping → visual analysis → script generation → video output. Fully automated.",
+      "tags": "Apify · Gemini Vision · Claude · Veo 3 · n8n",
+      "status": "In production"
+    },
+    "p5": {
+      "title": "End-to-end Paid Acquisition Funnels",
+      "desc": "Two full sales funnels delivered: landing page, Google Ads campaigns, GTM tracking, GA4 dashboards, audience segmentation, keyword research and creative iteration.",
+      "tags": "Google Ads · GTM · GA4 · WordPress · Paid Media",
+      "status": "Delivered"
+    }
+  },
+  "skills": {
+    "title": "Stack",
+    "sub": "Tools and technologies I work with daily.",
+    "aiAutomation": "AI & Automation",
+    "backend": "Backend & Data",
+    "growth": "Growth & Marketing",
+    "tools": "Tools"
+  },
+  "contact": {
+    "title": "Let's talk",
+    "sub": "Hiring full-time or looking for freelance help? Send a message or book a 15-min call.",
+    "nameLabel": "Name",
+    "namePh": "Your name",
+    "emailLabel": "Email",
+    "emailPh": "you@example.com",
+    "messageLabel": "Message",
+    "messagePh": "Tell me a little about what you're working on…",
+    "submit": "Send message",
+    "sideLead": "Or reach out directly.",
+    "sending": "Sending…",
+    "success": "Thanks — your message is on its way.",
+    "error": "Something went wrong. Please try again or email me directly.",
+    "mailtoNote": "Opening your email app…",
+    "bookCall": "Book a 15-min call"
+  },
+  "footer": {
+    "name": "Miguel Dacal",
+    "rights": "All rights reserved."
+  }
+}
