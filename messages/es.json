@@ -19,8 +19,8 @@
   },
   "about": {
     "title": "Sobre mí",
-    "p1": "Soy un builder autodidacta que monta automatizaciones con IA en producción. Antes pasé 15 años como funcionario en España — y en 2020 lo dejé voluntariamente para reinventarme. 16 meses en Sídney construyendo mi base de inglés, un Ciclo de Grado Superior en Desarrollo de Aplicaciones Multiplataforma, y desde 2024 trabajo full-time en sistemas de IA y growth.",
-    "p2": "Hoy llevo mi propia práctica end-to-end — bots de WhatsApp, agentes de voz, pipelines de anuncios, embudos paid — mientras construyo en solitario un SaaS de research de contenido viral. Certified Implementer en AI Automation por Dania.ai. Me importan los sistemas que realmente envían y sobreviven al contacto con producción.",
+    "p1": "Mi recorrido en tecnología supera los 20 años: programo desde hace mucho y combino el lado técnico con el de negocio. Fundé una startup de experiencias locales en 2013 y he asesorado a otros proyectos en marketing y estrategia digital. En paralelo fui funcionario en España durante 16 años; en 2020 pasé a dedicarme por completo a la tecnología y al marketing, formándome y actualizándome de forma continua y aplicando todo en mis propios proyectos.",
+    "p2": "Hoy llevo mi propia práctica end-to-end — bots de WhatsApp, agentes de voz, pipelines de anuncios, embudos paid — mientras construyo en solitario un SaaS de research de contenido viral. Certified Implementer en AI Automation por Dania.ai. Me apasionan los retos: aprendo rápido cualquier tecnología nueva y mi obsesión es aplicar lo último a problemas reales de la forma más eficiente.",
     "locationLabel": "Ubicación",
     "locationValue": "Madrid · Híbrido o remoto",
     "focusLabel": "Enfoque",
@@ -63,6 +63,12 @@
       "desc": "Dos embudos completos entregados: landing, campañas de Google Ads, tracking con GTM, dashboards en GA4, segmentación de audiencias, keyword research e iteración creativa.",
       "tags": "Google Ads · GTM · GA4 · WordPress · Paid Media",
       "status": "Entregados"
+    },
+    "p6": {
+      "title": "Lead Scraper — Google Maps",
+      "desc": "Sub-workflow de n8n que extrae leads de negocios desde Google Maps, saca y deduplica emails, y los envía a Sheets. Invocable desde otras automatizaciones.",
+      "tags": "n8n · Google Maps · Email extraction · Sheets",
+      "status": "En producción"
     }
   },
   "skills": {
@@ -80,18 +86,37 @@
     "namePh": "Tu nombre",
     "emailLabel": "Email",
     "emailPh": "tu@ejemplo.com",
+    "phoneLabel": "Teléfono (opcional)",
+    "phonePh": "+34 6XX XXX XXX",
     "messageLabel": "Mensaje",
     "messagePh": "Cuéntame brevemente en qué estás trabajando…",
     "submit": "Enviar mensaje",
     "sideLead": "O contáctame directamente.",
     "sending": "Enviando…",
     "success": "Gracias — tu mensaje está en camino.",
-    "error": "Algo salió mal. Inténtalo de nuevo o escríbeme por email.",
-    "mailtoNote": "Abriendo tu aplicación de correo…",
+    "errorNameRequired": "Indica tu nombre",
+    "errorEmailRequired": "Indica tu email",
+    "errorEmailInvalid": "Indica un email válido",
+    "errorPhoneInvalid": "Indica un teléfono válido",
+    "errorMessageRequired": "Escribe un mensaje breve",
+    "error": "Algo salió mal. Inténtalo de nuevo o contáctame por LinkedIn o agenda una llamada.",
+    "unavailable": "El formulario no está disponible. Contáctame por LinkedIn o agenda una llamada.",
     "bookCall": "Agendar llamada de 30 min"
   },
   "footer": {
     "name": "Miguel Dacal",
     "rights": "Todos los derechos reservados."
+  },
+  "chat": {
+    "toggle": "Pregúntale lo que sea a Miguel",
+    "title": "Pregúntale lo que sea a Miguel",
+    "subtitle": "Asistente de IA entrenado con el perfil de Miguel",
+    "placeholder": "Escribe tu pregunta...",
+    "send": "Enviar",
+    "error": "Algo salió mal. Inténtalo de nuevo o escribe a miguelcoseti@gmail.com",
+    "emptyLead": "¡Hola! Soy el asistente de IA de Miguel. Prueba con una de estas:",
+    "suggestion1": "¿A qué se dedica Miguel?",
+    "suggestion2": "¿Cuál es su proyecto más reciente?",
+    "suggestion3": "¿Está abierto a oportunidades?"
   }
 }

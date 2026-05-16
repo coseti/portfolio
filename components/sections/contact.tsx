@@ -1,53 +1,86 @@
 'use client';
 
-import {useTranslations} from 'next-intl';
+import {useTranslations, useLocale} from 'next-intl';
 import {useState, type FormEvent} from 'react';
 import {CalButton} from '@/components/cal-button';
 
-const EMAIL = 'miguelcoseti@gmail.com';
-const FORMSPREE_ID = process.env.NEXT_PUBLIC_FORMSPREE_ID ?? '';
+type Status = 'idle' | 'sending' | 'success' | 'error' | 'unavailable';
+type FieldErrors = {
+  name?: string;
+  email?: string;
+  phone?: string;
+  message?: string;
+};
 
-type Status = 'idle' | 'sending' | 'success' | 'error';
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const PHONE_RE = /^[+\d][\d\s\-()]{5,19}$/;
 
 export function Contact() {
   const t = useTranslations('contact');
+  const locale = useLocale();
   const [status, setStatus] = useState<Status>('idle');
+  const [errors, setErrors] = useState<FieldErrors>({});
+
+  function validate(values: {
+    name: string;
+    email: string;
+    phone: string;
+    message: string;
+  }): FieldErrors {
+    const errs: FieldErrors = {};
+    if (!values.name) errs.name = t('errorNameRequired');
+    if (!values.email) errs.email = t('errorEmailRequired');
+    else if (!EMAIL_RE.test(values.email)) errs.email = t('errorEmailInvalid');
+    if (values.phone && !PHONE_RE.test(values.phone))
+      errs.phone = t('errorPhoneInvalid');
+    if (!values.message) errs.message = t('errorMessageRequired');
+    return errs;
+  }
 
   async function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const form = e.currentTarget;
     const data = new FormData(form);
-    const name = (data.get('name') || '').toString().trim();
-    const email = (data.get('email') || '').toString().trim();
-    const message = (data.get('message') || '').toString().trim();
+    const values = {
+      name: (data.get('name') || '').toString().trim(),
+      email: (data.get('email') || '').toString().trim(),
+      phone: (data.get('phone') || '').toString().trim(),
+      message: (data.get('message') || '').toString().trim()
+    };
 
-    if (!name || !email || !message) {
-      setStatus('error');
-      return;
-    }
+    const fieldErrors = validate(values);
+    setErrors(fieldErrors);
 
-    if (!FORMSPREE_ID) {
-      const subject = encodeURIComponent('Portfolio inquiry from ' + name);
-      const body = encodeURIComponent(`${message}\n\n— ${name} <${email}>`);
-      window.location.href = `mailto:${EMAIL}?subject=${subject}&body=${body}`;
+    if (Object.keys(fieldErrors).length > 0) {
+      setStatus('idle');
       return;
     }
 
     setStatus('sending');
     try {
-      const res = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+      const res = await fetch('/api/contact', {
         method: 'POST',
-        headers: {Accept: 'application/json'},
-        body: data
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({...values, locale})
       });
-      if (res.ok) {
+
+      if (res.status === 204 || res.ok) {
         form.reset();
+        setErrors({});
         setStatus('success');
+      } else if (res.status === 503) {
+        setStatus('unavailable');
       } else {
         setStatus('error');
       }
     } catch {
       setStatus('error');
+    }
+  }
+
+  function clearFieldError(field: keyof FieldErrors) {
+    if (errors[field]) {
+      setErrors((prev) => ({...prev, [field]: undefined}));
     }
   }
 
@@ -58,7 +91,17 @@ export function Contact() {
         ? t('success')
         : status === 'error'
           ? t('error')
-          : '';
+          : status === 'unavailable'
+            ? t('unavailable')
+            : '';
+
+  const labelCls = 'font-mono text-[0.74rem] uppercase tracking-[0.12em] text-muted';
+  const baseInputCls =
+    'rounded-[10px] border bg-surface px-4 py-3 text-[0.98rem] text-foreground transition-all placeholder:text-muted/70 focus:outline-none focus:ring-[3px]';
+  const okInputCls = 'border-border focus:border-primary focus:ring-primary-soft';
+  const errInputCls =
+    'border-[#F87171] focus:border-[#F87171] focus:ring-[#F87171]/20';
+  const errorTextCls = 'text-[0.82rem] text-[#F87171]';
 
   return (
     <section
@@ -79,11 +122,8 @@ export function Contact() {
 
         <div className="grid items-start gap-10 md:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)] md:gap-14">
           <form className="flex flex-col gap-4" onSubmit={onSubmit} noValidate>
-            <div className="flex flex-col gap-2">
-              <label
-                htmlFor="contact-name"
-                className="font-mono text-[0.74rem] uppercase tracking-[0.12em] text-muted"
-              >
+            <div className="flex flex-col gap-1.5">
+              <label htmlFor="contact-name" className={labelCls}>
                 {t('nameLabel')}
               </label>
               <input
@@ -91,15 +131,20 @@ export function Contact() {
                 name="name"
                 type="text"
                 placeholder={t('namePh')}
-                required
-                className="rounded-[10px] border border-border bg-surface px-4 py-3 text-[0.98rem] text-foreground transition-all placeholder:text-muted/70 focus:border-primary focus:outline-none focus:ring-[3px] focus:ring-primary-soft"
+                aria-invalid={!!errors.name}
+                aria-describedby={errors.name ? 'contact-name-error' : undefined}
+                onChange={() => clearFieldError('name')}
+                className={`${baseInputCls} ${errors.name ? errInputCls : okInputCls}`}
               />
+              {errors.name && (
+                <p id="contact-name-error" className={errorTextCls}>
+                  {errors.name}
+                </p>
+              )}
             </div>
-            <div className="flex flex-col gap-2">
-              <label
-                htmlFor="contact-email"
-                className="font-mono text-[0.74rem] uppercase tracking-[0.12em] text-muted"
-              >
+
+            <div className="flex flex-col gap-1.5">
+              <label htmlFor="contact-email" className={labelCls}>
                 {t('emailLabel')}
               </label>
               <input
@@ -107,15 +152,42 @@ export function Contact() {
                 name="email"
                 type="email"
                 placeholder={t('emailPh')}
-                required
-                className="rounded-[10px] border border-border bg-surface px-4 py-3 text-[0.98rem] text-foreground transition-all placeholder:text-muted/70 focus:border-primary focus:outline-none focus:ring-[3px] focus:ring-primary-soft"
+                aria-invalid={!!errors.email}
+                aria-describedby={errors.email ? 'contact-email-error' : undefined}
+                onChange={() => clearFieldError('email')}
+                className={`${baseInputCls} ${errors.email ? errInputCls : okInputCls}`}
               />
+              {errors.email && (
+                <p id="contact-email-error" className={errorTextCls}>
+                  {errors.email}
+                </p>
+              )}
             </div>
-            <div className="flex flex-col gap-2">
-              <label
-                htmlFor="contact-message"
-                className="font-mono text-[0.74rem] uppercase tracking-[0.12em] text-muted"
-              >
+
+            <div className="flex flex-col gap-1.5">
+              <label htmlFor="contact-phone" className={labelCls}>
+                {t('phoneLabel')}
+              </label>
+              <input
+                id="contact-phone"
+                name="phone"
+                type="tel"
+                placeholder={t('phonePh')}
+                autoComplete="tel"
+                aria-invalid={!!errors.phone}
+                aria-describedby={errors.phone ? 'contact-phone-error' : undefined}
+                onChange={() => clearFieldError('phone')}
+                className={`${baseInputCls} ${errors.phone ? errInputCls : okInputCls}`}
+              />
+              {errors.phone && (
+                <p id="contact-phone-error" className={errorTextCls}>
+                  {errors.phone}
+                </p>
+              )}
+            </div>
+
+            <div className="flex flex-col gap-1.5">
+              <label htmlFor="contact-message" className={labelCls}>
                 {t('messageLabel')}
               </label>
               <textarea
@@ -123,10 +195,20 @@ export function Contact() {
                 name="message"
                 rows={5}
                 placeholder={t('messagePh')}
-                required
-                className="resize-y rounded-[10px] border border-border bg-surface px-4 py-3 text-[0.98rem] text-foreground transition-all placeholder:text-muted/70 focus:border-primary focus:outline-none focus:ring-[3px] focus:ring-primary-soft"
+                aria-invalid={!!errors.message}
+                aria-describedby={errors.message ? 'contact-message-error' : undefined}
+                onChange={() => clearFieldError('message')}
+                className={`${baseInputCls} resize-y ${
+                  errors.message ? errInputCls : okInputCls
+                }`}
               />
+              {errors.message && (
+                <p id="contact-message-error" className={errorTextCls}>
+                  {errors.message}
+                </p>
+              )}
             </div>
+
             <button
               type="submit"
               disabled={status === 'sending'}
@@ -134,13 +216,14 @@ export function Contact() {
             >
               {t('submit')}
             </button>
+
             <p
               role="status"
               aria-live="polite"
               className={`min-h-[1.2em] text-[0.92rem] ${
                 status === 'success'
                   ? 'text-[#22C55E]'
-                  : status === 'error'
+                  : status === 'error' || status === 'unavailable'
                     ? 'text-[#F87171]'
                     : 'text-muted'
               }`}
@@ -152,18 +235,6 @@ export function Contact() {
           <aside>
             <p className="mb-4 text-muted">{t('sideLead')}</p>
             <ul className="flex flex-col gap-2">
-              <li>
-                <a
-                  href={`mailto:${EMAIL}`}
-                  className="inline-flex w-full items-center gap-3 rounded-[10px] border border-border bg-surface px-4 py-2.5 text-[0.95rem] transition-all hover:border-primary hover:bg-primary-soft hover:text-primary"
-                >
-                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <rect x="3" y="5" width="18" height="14" rx="2" />
-                    <path d="M3 7l9 6 9-6" />
-                  </svg>
-                  {EMAIL}
-                </a>
-              </li>
               <li>
                 <a
                   href="https://www.linkedin.com/in/miguel-dacal/"

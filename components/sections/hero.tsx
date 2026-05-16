@@ -24,7 +24,7 @@ export function Hero() {
           {t('eyebrow')}
         </span>
 
-        <h1 className="hero-title-gradient mb-3 font-serif text-5xl font-semibold leading-[1.02] tracking-tight sm:text-6xl md:text-7xl">
+        <h1 className="hero-title-gradient mb-3 pb-2 font-serif text-5xl font-semibold leading-[1.1] tracking-tight sm:text-6xl md:text-7xl">
           {t('title')}
         </h1>
 

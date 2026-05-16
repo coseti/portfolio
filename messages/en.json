@@ -19,8 +19,8 @@
   },
   "about": {
     "title": "About",
-    "p1": "I'm a self-taught builder shipping production AI automation. Before that, I spent 15 years as a tenured civil servant in Spain — then deliberately walked away in 2020 to reinvent myself. Sixteen months in Sydney to build my English foundation, a Higher Vocational Diploma in software development, and since 2024 I've been full-time on AI systems and growth.",
-    "p2": "Today I run my own end-to-end practice — WhatsApp bots, voice AI agents, ad pipelines, paid funnels — while building a viral content research SaaS solo. Certified Implementer for AI Automation by Dania.ai. I care about systems that actually ship and survive contact with production.",
+    "p1": "My path in tech spans more than 20 years: I've been coding for a long time and I combine the technical side with the business side. I founded a local-experiences startup in 2013 and have advised other projects on marketing and digital strategy. In parallel, I served as a civil servant in Spain for 16 years; in 2020 I moved to working full-time on technology and marketing — continuously learning and staying up to date, and applying everything to my own projects.",
+    "p2": "Today I run my own end-to-end practice — WhatsApp bots, voice AI agents, ad pipelines, paid funnels — while building a viral content research SaaS solo. Certified Implementer for AI Automation by Dania.ai. I'm driven by challenges: I learn any new technology fast and I'm obsessed with applying the latest to real problems as efficiently as possible.",
     "locationLabel": "Location",
     "locationValue": "Madrid · Hybrid or remote",
     "focusLabel": "Focus",
@@ -63,6 +63,12 @@
       "desc": "Two full sales funnels delivered: landing page, Google Ads campaigns, GTM tracking, GA4 dashboards, audience segmentation, keyword research and creative iteration.",
       "tags": "Google Ads · GTM · GA4 · WordPress · Paid Media",
       "status": "Delivered"
+    },
+    "p6": {
+      "title": "Lead Scraper — Google Maps",
+      "desc": "n8n sub-workflow that scrapes business leads from Google Maps, extracts and deduplicates emails, and pushes them to Sheets. Invocable from other automations.",
+      "tags": "n8n · Google Maps · Email extraction · Sheets",
+      "status": "In production"
     }
   },
   "skills": {
@@ -80,18 +86,37 @@
     "namePh": "Your name",
     "emailLabel": "Email",
     "emailPh": "you@example.com",
+    "phoneLabel": "Phone (optional)",
+    "phonePh": "+34 6XX XXX XXX",
     "messageLabel": "Message",
     "messagePh": "Tell me a little about what you're working on…",
     "submit": "Send message",
     "sideLead": "Or reach out directly.",
     "sending": "Sending…",
     "success": "Thanks — your message is on its way.",
-    "error": "Something went wrong. Please try again or email me directly.",
-    "mailtoNote": "Opening your email app…",
+    "errorNameRequired": "Please enter your name",
+    "errorEmailRequired": "Please enter your email",
+    "errorEmailInvalid": "Please enter a valid email address",
+    "errorPhoneInvalid": "Please enter a valid phone number",
+    "errorMessageRequired": "Please write a short message",
+    "error": "Something went wrong. Please try again or reach me via LinkedIn or by booking a call.",
+    "unavailable": "The form is temporarily unavailable. Please reach me via LinkedIn or book a call.",
     "bookCall": "Book a 30-min call"
   },
   "footer": {
     "name": "Miguel Dacal",
     "rights": "All rights reserved."
+  },
+  "chat": {
+    "toggle": "Ask Miguel anything",
+    "title": "Ask Miguel anything",
+    "subtitle": "AI assistant trained on Miguel's profile",
+    "placeholder": "Type your question...",
+    "send": "Send",
+    "error": "Sorry, something went wrong. Try again or email miguelcoseti@gmail.com",
+    "emptyLead": "Hi! I'm Miguel's AI assistant. Try one of these:",
+    "suggestion1": "What does Miguel do?",
+    "suggestion2": "What's his most recent project?",
+    "suggestion3": "Is he open to work?"
   }
 }

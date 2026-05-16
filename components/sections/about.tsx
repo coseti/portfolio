@@ -1,4 +1,5 @@
 import {useTranslations} from 'next-intl';
+import {AvatarImage} from '@/components/avatar-image';
 
 export function About() {
   const t = useTranslations('about');
@@ -21,12 +22,10 @@ export function About() {
 
         <div className="grid items-start gap-10 md:grid-cols-[minmax(0,1fr)_minmax(0,1.4fr)] md:gap-16">
           <div className="md:sticky md:top-[calc(72px+24px)]">
-            <div
-              className="flex aspect-square w-full max-w-[360px] items-center justify-center overflow-hidden rounded-[24px] border border-border bg-surface-2 text-primary"
-              style={{boxShadow: 'var(--shadow-base)'}}
-            >
-              <span className="font-serif text-[8rem] font-semibold">MD</span>
-            </div>
+            <AvatarImage
+              src="https://res.cloudinary.com/df4zim15o/image/upload/01_avatar_mm8myg.png"
+              alt="Miguel Dacal"
+            />
           </div>
 
           <div>
