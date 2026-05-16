@@ -81,7 +81,7 @@ export function ProjectCard({
                     type="button"
                     onClick={() => go(-1)}
                     aria-label="Previous image"
-                    className="absolute left-2 top-1/2 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full bg-[#0B0E14]/70 text-white opacity-0 backdrop-blur transition-opacity hover:bg-[#0B0E14]/90 group-hover:opacity-100 focus:opacity-100"
+                    className="absolute left-2 top-1/2 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full bg-[#0B0E14]/70 text-white backdrop-blur transition-colors hover:bg-[#0B0E14]/90"
                   >
                     <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                       <path d="M15 18l-6-6 6-6" />
@@ -91,7 +91,7 @@ export function ProjectCard({
                     type="button"
                     onClick={() => go(1)}
                     aria-label="Next image"
-                    className="absolute right-2 top-1/2 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full bg-[#0B0E14]/70 text-white opacity-0 backdrop-blur transition-opacity hover:bg-[#0B0E14]/90 group-hover:opacity-100 focus:opacity-100"
+                    className="absolute right-2 top-1/2 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full bg-[#0B0E14]/70 text-white backdrop-blur transition-colors hover:bg-[#0B0E14]/90"
                   >
                     <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                       <path d="M9 18l6-6-6-6" />
