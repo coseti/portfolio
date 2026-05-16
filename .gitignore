@@ -42,3 +42,7 @@ next-env.d.ts
 
 # local backup of the previous HTML portfolio (~25MB) — not deployed
 /legacy
+
+# internal system documentation — contains infra details (webhooks, HMAC,
+# env vars). Local only, NEVER push to the public repo.
+/SYSTEM.md
