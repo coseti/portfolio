@@ -2,6 +2,8 @@
 
 import {useTranslations, useLocale} from 'next-intl';
 import {useState, type FormEvent} from 'react';
+import PhoneInput, {isValidPhoneNumber} from 'react-phone-number-input';
+import 'react-phone-number-input/style.css';
 import {CalButton} from '@/components/cal-button';
 
 type Status = 'idle' | 'sending' | 'success' | 'error' | 'unavailable';
@@ -12,29 +14,48 @@ type FieldErrors = {
   message?: string;
 };
 
-const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-const PHONE_RE = /^[+\d][\d\s\-()]{5,19}$/;
+const EMAIL_RE = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+$/;
 
 export function Contact() {
   const t = useTranslations('contact');
   const locale = useLocale();
   const [status, setStatus] = useState<Status>('idle');
   const [errors, setErrors] = useState<FieldErrors>({});
+  const [phone, setPhone] = useState<string | undefined>(undefined);
 
   function validate(values: {
     name: string;
     email: string;
-    phone: string;
     message: string;
   }): FieldErrors {
     const errs: FieldErrors = {};
     if (!values.name) errs.name = t('errorNameRequired');
     if (!values.email) errs.email = t('errorEmailRequired');
     else if (!EMAIL_RE.test(values.email)) errs.email = t('errorEmailInvalid');
-    if (values.phone && !PHONE_RE.test(values.phone))
+    if (phone && !isValidPhoneNumber(phone))
       errs.phone = t('errorPhoneInvalid');
     if (!values.message) errs.message = t('errorMessageRequired');
     return errs;
+  }
+
+  function validateEmailOnBlur(value: string) {
+    const v = value.trim();
+    setErrors((prev) => ({
+      ...prev,
+      email: !v
+        ? t('errorEmailRequired')
+        : !EMAIL_RE.test(v)
+          ? t('errorEmailInvalid')
+          : undefined
+    }));
+  }
+
+  function validatePhoneOnBlur() {
+    setErrors((prev) => ({
+      ...prev,
+      phone:
+        phone && !isValidPhoneNumber(phone) ? t('errorPhoneInvalid') : undefined
+    }));
   }
 
   async function onSubmit(e: FormEvent<HTMLFormElement>) {
@@ -44,7 +65,6 @@ export function Contact() {
     const values = {
       name: (data.get('name') || '').toString().trim(),
       email: (data.get('email') || '').toString().trim(),
-      phone: (data.get('phone') || '').toString().trim(),
       message: (data.get('message') || '').toString().trim()
     };
 
@@ -61,11 +81,12 @@ export function Contact() {
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify({...values, locale})
+        body: JSON.stringify({...values, phone: phone ?? '', locale})
       });
 
       if (res.status === 204 || res.ok) {
         form.reset();
+        setPhone(undefined);
         setErrors({});
         setStatus('success');
       } else if (res.status === 503) {
@@ -155,6 +176,7 @@ export function Contact() {
                 aria-invalid={!!errors.email}
                 aria-describedby={errors.email ? 'contact-email-error' : undefined}
                 onChange={() => clearFieldError('email')}
+                onBlur={(e) => validateEmailOnBlur(e.target.value)}
                 className={`${baseInputCls} ${errors.email ? errInputCls : okInputCls}`}
               />
               {errors.email && (
@@ -168,17 +190,24 @@ export function Contact() {
               <label htmlFor="contact-phone" className={labelCls}>
                 {t('phoneLabel')}
               </label>
-              <input
-                id="contact-phone"
-                name="phone"
-                type="tel"
-                placeholder={t('phonePh')}
-                autoComplete="tel"
-                aria-invalid={!!errors.phone}
-                aria-describedby={errors.phone ? 'contact-phone-error' : undefined}
-                onChange={() => clearFieldError('phone')}
-                className={`${baseInputCls} ${errors.phone ? errInputCls : okInputCls}`}
-              />
+              <div
+                className={`phone-field rounded-[10px] border ${
+                  errors.phone ? 'border-[#F87171]' : 'border-border'
+                } bg-surface px-3 py-2 transition-colors`}
+              >
+                <PhoneInput
+                  id="contact-phone"
+                  international
+                  defaultCountry={locale === 'en' ? 'US' : 'ES'}
+                  value={phone}
+                  onChange={(v) => {
+                    setPhone(v);
+                    clearFieldError('phone');
+                  }}
+                  onBlur={validatePhoneOnBlur}
+                  placeholder={t('phonePh')}
+                />
+              </div>
               {errors.phone && (
                 <p id="contact-phone-error" className={errorTextCls}>
                   {errors.phone}

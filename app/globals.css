@@ -116,6 +116,53 @@ body {
 }
 
 /* =========================================================
+   react-phone-number-input — dark theme overrides
+   ========================================================= */
+.phone-field .PhoneInput {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.phone-field .PhoneInputCountry {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding-right: 0.5rem;
+  border-right: 1px solid var(--border);
+}
+.phone-field .PhoneInputCountryIcon {
+  width: 1.4em;
+  height: 1em;
+  box-shadow: 0 0 0 1px var(--border);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.phone-field .PhoneInputCountrySelectArrow {
+  color: var(--muted);
+  opacity: 0.8;
+}
+.phone-field .PhoneInputInput {
+  flex: 1;
+  background: transparent;
+  border: 0;
+  outline: none;
+  color: var(--foreground);
+  font-size: 0.98rem;
+  padding: 0.4rem 0;
+}
+.phone-field .PhoneInputInput::placeholder {
+  color: color-mix(in srgb, var(--muted) 70%, transparent);
+}
+/* The native country <select> overlay */
+.phone-field .PhoneInputCountrySelect {
+  color: var(--foreground);
+}
+.phone-field .PhoneInputCountrySelect option {
+  background: var(--surface);
+  color: var(--foreground);
+}
+
+/* =========================================================
    Reveal animation (drop-in for sections)
    ========================================================= */
 .reveal {

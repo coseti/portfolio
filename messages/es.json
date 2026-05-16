@@ -93,7 +93,7 @@
     "submit": "Enviar mensaje",
     "sideLead": "O contáctame directamente.",
     "sending": "Enviando…",
-    "success": "Gracias — tu mensaje está en camino.",
+    "success": "Gracias — tu mensaje ha sido enviado.",
     "errorNameRequired": "Indica tu nombre",
     "errorEmailRequired": "Indica tu email",
     "errorEmailInvalid": "Indica un email válido",
