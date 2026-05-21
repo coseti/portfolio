@@ -12,6 +12,8 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Legacy static portfolio (gitignored backup, not part of the active codebase).
+    "legacy/**",
   ]),
 ]);
 
