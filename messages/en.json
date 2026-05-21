@@ -42,12 +42,23 @@
     "s5": {
       "pain": "I want to use AI but I don't know where to start.",
       "fix": "Honest diagnosis + a tailored system with LLMs (Claude, GPT, Gemini): we start where you save or sell the most, not where the hype is. No endless projects, no agency lock-in."
+    },
+    "s6": {
+      "pain": "I'm stuck and I don't know how to grow sales.",
+      "fix": "A growth strategy combining organic acquisition (SEO, content) and paid (Google and Meta Ads), optimization of your existing funnels and systematic testing to know which channel to scale first. You break the plateau without burning budget on scattered campaigns."
+    },
+    "s7": {
+      "pain": "My customers buy once and never come back.",
+      "fix": "Automated retention systems: post-purchase sequences, segmented remarketing and win-back campaigns to inactive customers. Bringing back a customer who already bought is several times cheaper than acquiring a new one."
     }
   },
   "about": {
     "title": "Why work with me",
-    "p1": "I come from two worlds that rarely cross: 16 years as a civil servant in the Spanish Government taught me to document processes, hit deadlines and work with rigor; 20+ years between technology and business taught me to build and to sell. For you, this means I won't just \"install AI\", I understand how your business runs and where automation actually moves the needle.",
-    "p2": "Today I build end-to-end solutions for SMBs, professionals and indie products, WhatsApp bots, voice AI agents, AI pipelines and paid acquisition funnels, while building a viral content research SaaS solo on the side. Certified Implementer for AI Automation by Dania.ai. I learn any new technology fast and I apply the latest to real problems, not to demos.",
+    "p1": "I come from two worlds that rarely cross: 16 years as a civil servant in the Spanish Government taught me to document processes, hit deadlines and work with rigor; 20+ years between technology and business taught me to build and to sell. For you, this means I won't just \"install AI\". I understand how your business runs and where automation actually moves the needle.",
+    "p2": "Today I build end-to-end solutions for SMBs and professionals, focused on solving the main problems and bottlenecks businesses face: 24/7 phone and conversational assistants (WhatsApp bots and voice agents), AI pipelines, lead-acquisition funnels, and marketing strategies (organic and paid) to grow sales and recurring revenue from existing customers.",
+    "p3": "In parallel, I'm building a viral content research SaaS solo that helps content creators find viral content they can easily replicate to grow their audiences with market-validated material.",
+    "p4": "Certified AI Implementer by Dania.ai, deploying AI solutions across the Dania.ai ecosystem.",
+    "p5": "I'm passionate about staying at the cutting edge of technology and putting that knowledge into practice. I'm continuously learning to keep developing my skills and to implement the best practices and tools in real projects (not just in test environments), to bring more value to my clients. That lets me solve their challenges in a more agile, effective and robust way, ensuring solutions that actually work in the real world.",
     "locationLabel": "Location",
     "locationValue": "Madrid · Hybrid or remote",
     "focusLabel": "Focus",

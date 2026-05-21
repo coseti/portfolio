@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import {useTranslations} from 'next-intl';
 
-const ITEMS = ['s1', 's2', 's3', 's4', 's5'] as const;
+const ITEMS = ['s1', 's2', 's3', 's4', 's5', 's6', 's7'] as const;
 
 const AVATAR_SRC =
   'https://res.cloudinary.com/df4zim15o/image/upload/01_avatar_mm8myg.png';

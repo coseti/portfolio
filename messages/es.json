@@ -42,12 +42,23 @@
     "s5": {
       "pain": "Quiero usar IA pero no sé por dónde empezar.",
       "fix": "Diagnóstico honesto + sistema a medida con LLMs (Claude, GPT, Gemini): empezamos por donde más ahorras o más vendes, no por la moda. Sin proyectos eternos ni dependencias de agencia."
+    },
+    "s6": {
+      "pain": "Estoy estancado y no sé cómo crecer las ventas.",
+      "fix": "Estrategia de growth que combina captación orgánica (SEO, contenido) y de pago (Google y Meta Ads), optimización de embudos existentes y testing sistemático para saber qué canal escalar primero. Sales del estancamiento sin tirar dinero a campañas sueltas."
+    },
+    "s7": {
+      "pain": "Mis clientes compran una vez y no vuelven.",
+      "fix": "Sistemas de retención automatizados: secuencias post-compra, remarketing segmentado y campañas de reactivación a clientes inactivos. Hacer volver al que ya te compró es varias veces más barato que captar uno nuevo."
     }
   },
   "about": {
     "title": "Por qué trabajar conmigo",
-    "p1": "Vengo de dos mundos que rara vez se cruzan: 16 años como funcionario en la Administración española me enseñaron a documentar procesos, cumplir plazos y trabajar con rigor; más de 20 años entre tecnología y negocio me enseñaron a construir y a vender. Para ti significa que no me limito a \"instalar IA\", entiendo cómo opera tu negocio y dónde la automatización mueve realmente la aguja.",
-    "p2": "Hoy construyo soluciones end-to-end para PYMEs, profesionales y productos indie, bots de WhatsApp, agentes de voz, pipelines de IA y embudos de captación pagada, y en paralelo desarrollo en solitario un SaaS de research de contenido viral. Certified Implementer en AI Automation por Dania.ai. Aprendo rápido cualquier tecnología nueva y aplico lo último a problemas reales, no a demos.",
+    "p1": "Vengo de dos mundos que rara vez se cruzan: 16 años como funcionario en la Administración española me enseñaron a documentar procesos, cumplir plazos y trabajar con rigor; más de 20 años entre tecnología y negocio me enseñaron a construir y a vender. Para ti significa que no me limito a \"instalar IA\". Entiendo cómo opera tu negocio y dónde la automatización mueve realmente la aguja.",
+    "p2": "Hoy construyo soluciones end-to-end para PYMEs y profesionales, especialmente soluciones encaminadas a resolver los principales problemas y cuellos de botella de las empresas como asistentes telefónicos y conversacionales 24/7 (bots de WhatsApp y agentes de voz), pipelines de IA y embudos de captación de leads y estrategias de marketing (orgánicas y de pago) para aumentar las ventas y la recurrencia de clientes habituales.",
+    "p3": "En paralelo desarrollo en solitario un SaaS de research de contenido viral que ayuda a creadores de contenido a encontrar contenido viral que puedan replicar fácilmente para crecer sus audiencias con contenido validado por el mercado.",
+    "p4": "Implementador certificado de IA por Dania.ai para la implementación de soluciones de Inteligencia Artificial en el ecosistema de Dania.ai.",
+    "p5": "Me apasiona mantenerme a la vanguardia tecnológica y llevar ese conocimiento a la práctica. Estoy continuamente formándome para seguir desarrollando mis skills y poder implementar las mejores prácticas y herramientas en proyectos reales (no solo en entornos de prueba), para aportar un mayor valor a mis clientes. Esto me permite resolver sus desafíos de manera más ágil, efectiva y sólida, garantizando soluciones que realmente funcionan en el mundo real.",
     "locationLabel": "Ubicación",
     "locationValue": "Madrid · Híbrido o remoto",
     "focusLabel": "Enfoque",

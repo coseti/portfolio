@@ -33,6 +33,9 @@ export function About() {
               {t('p1')}
             </p>
             <p className="mb-4 leading-relaxed text-muted">{t('p2')}</p>
+            <p className="mb-4 leading-relaxed text-muted">{t('p3')}</p>
+            <p className="mb-4 leading-relaxed text-muted">{t('p4')}</p>
+            <p className="mb-4 leading-relaxed text-muted">{t('p5')}</p>
 
             <dl className="mt-8 grid grid-cols-2 gap-4 border-t border-border pt-8 md:grid-cols-3">
               <div>
