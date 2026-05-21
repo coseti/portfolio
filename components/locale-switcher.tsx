@@ -1,8 +1,15 @@
 'use client';
 
 import {useLocale} from 'next-intl';
-import {useRouter, usePathname} from '@/i18n/navigation';
 import {useTransition} from 'react';
+import {useRouter, usePathname} from '@/i18n/navigation';
+
+const LOCALES = [
+  {code: 'es', label: 'Español', switchLabel: 'Cambiar a español'},
+  {code: 'en', label: 'English', switchLabel: 'Switch to English'}
+] as const;
+
+type LocaleCode = (typeof LOCALES)[number]['code'];
 
 export function LocaleSwitcher() {
   const locale = useLocale();
@@ -10,22 +17,41 @@ export function LocaleSwitcher() {
   const pathname = usePathname();
   const [isPending, startTransition] = useTransition();
 
-  function toggle() {
-    const next = locale === 'en' ? 'es' : 'en';
+  function switchTo(next: LocaleCode) {
+    if (next === locale) return;
     startTransition(() => {
       router.replace(pathname, {locale: next});
     });
   }
 
   return (
-    <button
-      type="button"
-      onClick={toggle}
-      disabled={isPending}
-      aria-label={locale === 'en' ? 'Cambiar a español' : 'Switch to English'}
-      className="inline-flex h-9 items-center justify-center rounded-[10px] px-3 font-mono text-[0.78rem] font-medium uppercase tracking-[0.05em] text-muted transition-colors hover:bg-primary-soft hover:text-primary disabled:opacity-60"
+    <div
+      role="group"
+      aria-label="Language"
+      className="inline-flex items-center gap-0.5 text-[0.85rem]"
     >
-      {locale === 'en' ? 'EN' : 'ES'}
-    </button>
+      {LOCALES.map((item) =>
+        item.code === locale ? (
+          <span
+            key={item.code}
+            aria-current="true"
+            className="inline-flex h-8 items-center rounded-[8px] bg-primary-soft px-2.5 font-medium text-primary"
+          >
+            {item.label}
+          </span>
+        ) : (
+          <button
+            key={item.code}
+            type="button"
+            onClick={() => switchTo(item.code)}
+            disabled={isPending}
+            aria-label={item.switchLabel}
+            className="inline-flex h-8 items-center rounded-[8px] px-2.5 text-muted transition-colors hover:bg-surface-2 hover:text-foreground disabled:opacity-60"
+          >
+            {item.label}
+          </button>
+        )
+      )}
+    </div>
   );
 }
