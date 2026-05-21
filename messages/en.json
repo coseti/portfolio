@@ -8,7 +8,8 @@
     "projects": "Projects",
     "process": "Process",
     "skills": "Stack",
-    "contact": "Contact"
+    "contact": "Contact",
+    "language": "Language"
   },
   "hero": {
     "eyebrow": "Open to work · Madrid",
@@ -21,7 +22,7 @@
   },
   "solutions": {
     "title": "What I solve",
-    "sub": "The pains that lead business owners and professionals to look for someone like me — and how I solve them in production, not in slides.",
+    "sub": "The pains that lead business owners and professionals to look for someone like me. How I solve them in production, not in slides.",
     "s1": {
       "pain": "I'm losing leads because I don't reply fast enough.",
       "fix": "WhatsApp bots and AI voice agents that answer, qualify and book on Cal.com 24/7. Zero cold leads sitting in a queue waiting for someone to reply tomorrow."

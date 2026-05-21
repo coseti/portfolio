@@ -1,6 +1,10 @@
+import Image from 'next/image';
 import {useTranslations} from 'next-intl';
 
 const ITEMS = ['s1', 's2', 's3', 's4', 's5'] as const;
+
+const AVATAR_SRC =
+  'https://res.cloudinary.com/df4zim15o/image/upload/01_avatar_mm8myg.png';
 
 export function Solutions() {
   const t = useTranslations('solutions');
@@ -13,9 +17,25 @@ export function Solutions() {
     >
       <div className="mx-auto max-w-[1100px]">
         <div className="mb-10 max-w-[720px]">
-          <span className="mb-2 inline-block font-mono text-xs uppercase tracking-[0.18em] text-primary">
-            01 / Solutions
-          </span>
+          <div className="mb-3 flex items-center gap-3">
+            <a
+              href="#about"
+              aria-label="Miguel Dacal"
+              className="block h-12 w-12 shrink-0 overflow-hidden rounded-full border border-border bg-surface-2 transition-all hover:border-primary"
+            >
+              <Image
+                src={AVATAR_SRC}
+                alt=""
+                width={96}
+                height={96}
+                className="h-full w-full object-cover"
+                unoptimized
+              />
+            </a>
+            <span className="font-mono text-xs uppercase tracking-[0.18em] text-primary">
+              02 / Solutions
+            </span>
+          </div>
           <h2 className="mb-3 font-serif text-3xl font-semibold leading-tight tracking-tight sm:text-4xl">
             {t('title')}
           </h2>

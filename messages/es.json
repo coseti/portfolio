@@ -8,7 +8,8 @@
     "projects": "Proyectos",
     "process": "Proceso",
     "skills": "Stack",
-    "contact": "Contacto"
+    "contact": "Contacto",
+    "language": "Idioma"
   },
   "hero": {
     "eyebrow": "Open to work · Madrid",
@@ -21,7 +22,7 @@
   },
   "solutions": {
     "title": "Qué resuelvo",
-    "sub": "Los dolores que llevan a empresarios y profesionales a buscar a alguien como yo — y cómo los resuelvo en producción, no en diapositivas.",
+    "sub": "Los dolores que llevan a empresarios y profesionales a buscar a alguien como yo. Cómo los resuelvo en producción, no en diapositivas.",
     "s1": {
       "pain": "Pierdo leads porque no respondo a tiempo.",
       "fix": "Bots de WhatsApp y agentes de voz con IA que responden, cualifican y agendan en Cal.com 24/7. Cero leads en frío esperando a que alguien los conteste mañana."

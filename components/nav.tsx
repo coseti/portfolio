@@ -6,8 +6,8 @@ import {LocaleSwitcher} from './locale-switcher';
 import {ThemeToggle} from './theme-toggle';
 
 const SECTIONS = [
-  'solutions',
   'about',
+  'solutions',
   'projects',
   'process',
   'skills',
@@ -94,7 +94,10 @@ export function Nav() {
                 {t(id)}
               </a>
             ))}
-            <div className="mt-4 flex w-full items-center gap-2 border-l-0 pl-0 pt-4 lg:ml-4 lg:mt-0 lg:w-auto lg:border-l lg:border-border lg:pl-4 lg:pt-0">
+            <span className="mt-5 font-mono text-[0.72rem] uppercase tracking-[0.14em] text-muted lg:hidden">
+              {t('language')}
+            </span>
+            <div className="mt-2 flex w-full items-center gap-2 border-l-0 pl-0 lg:ml-4 lg:mt-0 lg:w-auto lg:border-l lg:border-border lg:pl-4 lg:pt-0">
               <LocaleSwitcher />
               <a
                 href="https://www.linkedin.com/in/miguel-dacal/"
