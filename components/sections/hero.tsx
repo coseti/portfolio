@@ -46,7 +46,7 @@ export function Hero() {
             {t('ctaPrimary')}
           </a>
           <a
-            href="#projects"
+            href="#solutions"
             className="inline-flex items-center gap-2 rounded-full border border-border px-5 py-3 text-sm font-medium text-foreground transition-all hover:border-primary hover:text-primary active:translate-y-px"
           >
             {t('ctaSecondary')}

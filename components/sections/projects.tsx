@@ -8,7 +8,7 @@ export function Projects() {
   return (
     <section
       id="projects"
-      className="px-5 py-16 sm:px-8 sm:py-24 md:py-28"
+      className="px-5 py-12 sm:px-8 sm:py-20 md:py-24"
       style={{scrollMarginTop: 'calc(72px + 16px)'}}
     >
       <div className="mx-auto max-w-[1100px]">
