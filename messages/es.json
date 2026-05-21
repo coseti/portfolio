@@ -37,7 +37,7 @@
     },
     "s4": {
       "pain": "Tengo datos pero no decisiones.",
-      "fix": "Agentes IA y pipelines (RAG, MCP) que leen, resumen y actúan sobre tu información — desde análisis de competencia hasta generación de contenido y reporting. Decisiones sobre datos, no sobre intuición."
+      "fix": "Agentes IA y pipelines (RAG, MCP) que leen, resumen y actúan sobre tu información, desde análisis de competencia hasta generación de contenido y reporting. Decisiones sobre datos, no sobre intuición."
     },
     "s5": {
       "pain": "Quiero usar IA pero no sé por dónde empezar.",
@@ -46,8 +46,8 @@
   },
   "about": {
     "title": "Por qué trabajar conmigo",
-    "p1": "Vengo de dos mundos que rara vez se cruzan: 16 años como funcionario en la Administración española me enseñaron a documentar procesos, cumplir plazos y trabajar con rigor; más de 20 años entre tecnología y negocio me enseñaron a construir y a vender. Para ti significa que no me limito a \"instalar IA\" — entiendo cómo opera tu negocio y dónde la automatización mueve realmente la aguja.",
-    "p2": "Hoy construyo soluciones end-to-end para PYMEs, profesionales y productos indie — bots de WhatsApp, agentes de voz, pipelines de IA y embudos de captación pagada — y en paralelo desarrollo en solitario un SaaS de research de contenido viral. Certified Implementer en AI Automation por Dania.ai. Aprendo rápido cualquier tecnología nueva y aplico lo último a problemas reales, no a demos.",
+    "p1": "Vengo de dos mundos que rara vez se cruzan: 16 años como funcionario en la Administración española me enseñaron a documentar procesos, cumplir plazos y trabajar con rigor; más de 20 años entre tecnología y negocio me enseñaron a construir y a vender. Para ti significa que no me limito a \"instalar IA\", entiendo cómo opera tu negocio y dónde la automatización mueve realmente la aguja.",
+    "p2": "Hoy construyo soluciones end-to-end para PYMEs, profesionales y productos indie, bots de WhatsApp, agentes de voz, pipelines de IA y embudos de captación pagada, y en paralelo desarrollo en solitario un SaaS de research de contenido viral. Certified Implementer en AI Automation por Dania.ai. Aprendo rápido cualquier tecnología nueva y aplico lo último a problemas reales, no a demos.",
     "locationLabel": "Ubicación",
     "locationValue": "Madrid · Híbrido o remoto",
     "focusLabel": "Enfoque",
@@ -57,7 +57,7 @@
   },
   "projects": {
     "title": "Proyectos destacados",
-    "sub": "Lo que ya está corriendo en producción y lo que estoy construyendo ahora — contado por el resultado que aporta al cliente, no por el stack.",
+    "sub": "Lo que ya está corriendo en producción y lo que estoy construyendo ahora, contado por el resultado que aporta al cliente, no por el stack.",
     "live": "Demo",
     "code": "GitHub",
     "case": "Caso de estudio",
@@ -69,13 +69,13 @@
     },
     "p2": {
       "title": "Bot de Cualificación de Leads en WhatsApp",
-      "desc": "Convierte conversaciones de WhatsApp en citas agendadas, 24/7 y sin tocar el ratón. El bot saluda, cualifica al lead, agenda en Cal.com y solo escala a un humano cuando hace falta — el equipo deja de perseguir mensajes y dedica el tiempo a cerrar.",
+      "desc": "Convierte conversaciones de WhatsApp en citas agendadas, 24/7 y sin tocar el ratón. El bot saluda, cualifica al lead, agenda en Cal.com y solo escala a un humano cuando hace falta, el equipo deja de perseguir mensajes y dedica el tiempo a cerrar.",
       "tags": "n8n · WhatsApp Business API · RAG · Cal.com",
       "status": "En producción"
     },
     "p3": {
       "title": "Agente de Voz IA con Booking",
-      "desc": "Atiende todas las llamadas entrantes, cualifica y reserva cita — también fuera de horario. Sin contestadores, sin colas, sin oportunidades perdidas por no descolgar. El cliente cuelga con cita confirmada y tú con la agenda llena.",
+      "desc": "Atiende todas las llamadas entrantes, cualifica y reserva cita, también fuera de horario. Sin contestadores, sin colas, sin oportunidades perdidas por no descolgar. El cliente cuelga con cita confirmada y tú con la agenda llena.",
       "tags": "Vapi · RAG · Cal.com",
       "status": "En producción"
     },
@@ -106,7 +106,7 @@
     "step2Label": "02 · Diseño del sistema",
     "step2Body": "Propuesta concreta: qué se automatiza, con qué herramientas, qué cuesta y qué métrica vas a mover. Sin humo ni dependencias eternas.",
     "step3Label": "03 · Implementación",
-    "step3Body": "Construyo el sistema end-to-end, conectado a tus herramientas reales y probado en producción. Vas viendo el avance — no esperas a un \"big reveal\".",
+    "step3Body": "Construyo el sistema end-to-end, conectado a tus herramientas reales y probado en producción. Vas viendo el avance, no esperas a un \"big reveal\".",
     "step4Label": "04 · Medición e iteración",
     "step4Body": "Dejo el tracking montado (GA4, dashboards, logs) para que sepas qué funciona. Iteramos sobre datos, no sobre opiniones."
   },
@@ -131,7 +131,7 @@
     "submit": "Enviar mensaje",
     "sideLead": "O contáctame directamente.",
     "sending": "Enviando…",
-    "success": "Gracias — tu mensaje ha sido enviado.",
+    "success": "Gracias, tu mensaje ha sido enviado.",
     "errorNameRequired": "Indica tu nombre",
     "errorEmailRequired": "Indica tu email",
     "errorEmailInvalid": "Indica un email válido",

@@ -37,7 +37,7 @@
     },
     "s4": {
       "pain": "I have data but not decisions.",
-      "fix": "AI agents and pipelines (RAG, MCP) that read, summarize and act on your information — from competitor analysis to content generation and reporting. Decisions on data, not intuition."
+      "fix": "AI agents and pipelines (RAG, MCP) that read, summarize and act on your information, from competitor analysis to content generation and reporting. Decisions on data, not intuition."
     },
     "s5": {
       "pain": "I want to use AI but I don't know where to start.",
@@ -46,8 +46,8 @@
   },
   "about": {
     "title": "Why work with me",
-    "p1": "I come from two worlds that rarely cross: 16 years as a civil servant in the Spanish Government taught me to document processes, hit deadlines and work with rigor; 20+ years between technology and business taught me to build and to sell. For you, this means I won't just \"install AI\" — I understand how your business runs and where automation actually moves the needle.",
-    "p2": "Today I build end-to-end solutions for SMBs, professionals and indie products — WhatsApp bots, voice AI agents, AI pipelines and paid acquisition funnels — while building a viral content research SaaS solo on the side. Certified Implementer for AI Automation by Dania.ai. I learn any new technology fast and I apply the latest to real problems, not to demos.",
+    "p1": "I come from two worlds that rarely cross: 16 years as a civil servant in the Spanish Government taught me to document processes, hit deadlines and work with rigor; 20+ years between technology and business taught me to build and to sell. For you, this means I won't just \"install AI\", I understand how your business runs and where automation actually moves the needle.",
+    "p2": "Today I build end-to-end solutions for SMBs, professionals and indie products, WhatsApp bots, voice AI agents, AI pipelines and paid acquisition funnels, while building a viral content research SaaS solo on the side. Certified Implementer for AI Automation by Dania.ai. I learn any new technology fast and I apply the latest to real problems, not to demos.",
     "locationLabel": "Location",
     "locationValue": "Madrid · Hybrid or remote",
     "focusLabel": "Focus",
@@ -57,7 +57,7 @@
   },
   "projects": {
     "title": "Selected projects",
-    "sub": "What's already running in production and what I'm shipping now — told by the client outcome, not by the stack.",
+    "sub": "What's already running in production and what I'm shipping now, told by the client outcome, not by the stack.",
     "live": "Live demo",
     "code": "GitHub",
     "case": "Case study",
@@ -69,13 +69,13 @@
     },
     "p2": {
       "title": "WhatsApp Lead Qualification Bot",
-      "desc": "Turns WhatsApp conversations into booked appointments, 24/7 and hands-off. The bot greets, qualifies the lead, books on Cal.com and only escalates to a human when needed — the team stops chasing messages and spends time closing.",
+      "desc": "Turns WhatsApp conversations into booked appointments, 24/7 and hands-off. The bot greets, qualifies the lead, books on Cal.com and only escalates to a human when needed, the team stops chasing messages and spends time closing.",
       "tags": "n8n · WhatsApp Business API · RAG · Cal.com",
       "status": "In production"
     },
     "p3": {
       "title": "Voice AI Booking Agent",
-      "desc": "Picks up every inbound call, qualifies and books — even after hours. No voicemail, no queues, no missed opportunities because nobody answered. Callers hang up with a confirmed appointment, you hang up with a full calendar.",
+      "desc": "Picks up every inbound call, qualifies and books, even after hours. No voicemail, no queues, no missed opportunities because nobody answered. Callers hang up with a confirmed appointment, you hang up with a full calendar.",
       "tags": "Vapi · RAG · Cal.com",
       "status": "In production"
     },
@@ -106,7 +106,7 @@
     "step2Label": "02 · System design",
     "step2Body": "A concrete proposal: what gets automated, with which tools, what it costs and which metric you'll move. No fluff, no endless dependencies.",
     "step3Label": "03 · Implementation",
-    "step3Body": "I build the system end-to-end, wired to your real tools and tested in production. You see progress along the way — no waiting for a \"big reveal\".",
+    "step3Body": "I build the system end-to-end, wired to your real tools and tested in production. You see progress along the way, no waiting for a \"big reveal\".",
     "step4Label": "04 · Measure and iterate",
     "step4Body": "I leave the tracking set up (GA4, dashboards, logs) so you know what's working. We iterate on data, not on opinions."
   },
@@ -131,7 +131,7 @@
     "submit": "Send message",
     "sideLead": "Or reach out directly.",
     "sending": "Sending…",
-    "success": "Thanks — your message has been sent.",
+    "success": "Thanks, your message has been sent.",
     "errorNameRequired": "Please enter your name",
     "errorEmailRequired": "Please enter your email",
     "errorEmailInvalid": "Please enter a valid email address",
