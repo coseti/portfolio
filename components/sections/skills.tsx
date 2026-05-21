@@ -1,7 +1,7 @@
 import {useTranslations} from 'next-intl';
 import {skillsByCategory, type SkillCategory} from '@/data/skills';
 
-const CATEGORIES: SkillCategory[] = ['aiAutomation', 'backend', 'growth', 'tools'];
+const CATEGORIES: SkillCategory[] = ['aiAutomation', 'fullStack', 'growth'];
 
 export function Skills() {
   const t = useTranslations('skills');
@@ -15,7 +15,7 @@ export function Skills() {
       <div className="mx-auto max-w-[1100px]">
         <div className="mb-10 max-w-[720px]">
           <span className="mb-2 inline-block font-mono text-xs uppercase tracking-[0.18em] text-primary">
-            03 / Stack
+            05 / Stack
           </span>
           <h2 className="mb-3 font-serif text-3xl font-semibold leading-tight tracking-tight sm:text-4xl">
             {t('title')}
@@ -23,7 +23,7 @@ export function Skills() {
           <p className="text-base text-muted">{t('sub')}</p>
         </div>
 
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {CATEGORIES.map((category) => (
             <div
               key={category}

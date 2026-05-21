@@ -7,13 +7,13 @@ export const alt = 'Miguel Dacal — AI Automation + Paid Growth';
 const COPY = {
   en: {
     eyebrow: 'Open to work · Madrid',
-    tagline: 'From ad click to booked appointment.',
-    sub: 'AI automation and paid growth, end to end.'
+    tagline: 'Win qualified clients, get your hours back, sell without leaving it to luck.',
+    sub: 'AI, automation and paid growth systems for SMBs and professionals.'
   },
   es: {
     eyebrow: 'Open to work · Madrid',
-    tagline: 'Del clic en el anuncio a la cita agendada.',
-    sub: 'Automatización con IA y growth, end to end.'
+    tagline: 'Capta clientes cualificados, recupera tus horas, vende sin depender de la suerte.',
+    sub: 'Sistemas de IA, automatización y growth para PYMEs y profesionales.'
   }
 } as const;
 

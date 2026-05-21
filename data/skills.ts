@@ -1,34 +1,32 @@
-export type SkillCategory = 'aiAutomation' | 'backend' | 'growth' | 'tools';
+export type SkillCategory = 'aiAutomation' | 'fullStack' | 'growth';
 
 export const skillsByCategory: Record<SkillCategory, string[]> = {
   aiAutomation: [
+    'AI/LLM integration',
+    'AI agents',
+    'RAG',
+    'MCP',
+    'Prompt Engineering',
+    'Workflow Automation',
+    'AI-Assisted Development',
+    'Claude Code',
     'n8n',
     'Vapi',
-    'WhatsApp Business API',
-    'RAG',
-    'AI Agents',
-    'MCP',
-    'Workflow Automation',
-    'Prompt Engineering',
-    'Claude Code'
+    'WhatsApp Business API'
   ],
-  backend: [
+  fullStack: [
+    'Full-Stack Development',
+    'Next.js',
     'FastAPI',
-    'Supabase',
     'PostgreSQL',
-    'pgvector',
-    'Celery',
-    'Redis',
-    'Next.js'
-  ],
-  growth: [
-    'Google Ads',
-    'Google Tag Manager',
-    'GA4',
-    'PPC',
-    'Paid Media',
-    'SEO',
     'WordPress'
   ],
-  tools: ['Git', 'Apify', 'Gemini Vision', 'Claude', 'Veo 3', 'TypeScript']
+  growth: [
+    'PPC',
+    'Paid Media',
+    'Google Ads',
+    'Google Analytics 4',
+    'Google Tag Manager',
+    'SEO'
+  ]
 };

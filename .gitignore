@@ -46,3 +46,7 @@ next-env.d.ts
 # internal system documentation — contains infra details (webhooks, HMAC,
 # env vars). Local only, NEVER push to the public repo.
 /SYSTEM.md
+
+# Playwright MCP screenshots and snapshots (debug artifacts)
+/.playwright-mcp/
+/*.png

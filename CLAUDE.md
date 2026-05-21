@@ -36,7 +36,7 @@ app/
 components/
   nav.tsx, theme-script.tsx, theme-toggle.tsx, locale-switcher.tsx
   cal-init.tsx, cal-button.tsx, chat-widget.tsx
-  sections/             # hero, about, projects, skills, contact, footer
+  sections/             # hero, solutions, about, projects, process, skills, contact, footer
 data/
   projects.ts           # project metadata (ids, thumbs)
   skills.ts             # skills grouped by category

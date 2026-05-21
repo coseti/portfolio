@@ -14,7 +14,7 @@ export function Projects() {
       <div className="mx-auto max-w-[1100px]">
         <div className="mb-10 max-w-[720px]">
           <span className="mb-2 inline-block font-mono text-xs uppercase tracking-[0.18em] text-primary">
-            02 / Projects
+            03 / Projects
           </span>
           <h2 className="mb-3 font-serif text-3xl font-semibold leading-tight tracking-tight sm:text-4xl">
             {t('title')}

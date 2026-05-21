@@ -13,7 +13,7 @@ export function About() {
       <div className="mx-auto max-w-[1100px]">
         <div className="mb-10 max-w-[720px]">
           <span className="mb-2 inline-block font-mono text-xs uppercase tracking-[0.18em] text-primary">
-            01 / About
+            02 / About
           </span>
           <h2 className="font-serif text-3xl font-semibold leading-tight tracking-tight sm:text-4xl">
             {t('title')}

@@ -3,85 +3,122 @@
     "skip": "Skip to content"
   },
   "nav": {
+    "solutions": "Solutions",
     "about": "About",
     "projects": "Projects",
-    "skills": "Skills",
+    "process": "Process",
+    "skills": "Stack",
     "contact": "Contact"
   },
   "hero": {
     "eyebrow": "Open to work · Madrid",
     "title": "Miguel Dacal",
-    "tagline": "From ad click to booked appointment — AI automation and paid growth, end to end.",
-    "bio": "Production AI automation and paid acquisition for SMBs and indie products. WhatsApp bots with n8n + RAG, voice agents with Vapi, multi-phase pipelines with Claude and Gemini. Currently building my own SaaS.",
+    "tagline": "Win qualified clients, get your hours back, sell without leaving it to luck.",
+    "bio": "AI, automation and paid growth systems for SMBs and professionals who want to turn their marketing into predictable revenue.",
     "ctaPrimary": "Connect on LinkedIn",
-    "ctaSecondary": "View projects",
+    "ctaSecondary": "See solutions",
     "ctaTertiary": "Book a 30-min call"
   },
+  "solutions": {
+    "title": "What I solve",
+    "sub": "The pains that lead business owners and professionals to look for someone like me — and how I solve them in production, not in slides.",
+    "s1": {
+      "pain": "I'm losing leads because I don't reply fast enough.",
+      "fix": "WhatsApp bots and AI voice agents that answer, qualify and book on Cal.com 24/7. Zero cold leads sitting in a queue waiting for someone to reply tomorrow."
+    },
+    "s2": {
+      "pain": "My team is burning out on repetitive tasks.",
+      "fix": "n8n automations that connect your tools (forms, CRM, Sheets, calendar, email) and remove the manual work that doesn't scale. Your team stops copy-pasting and gets back to selling."
+    },
+    "s3": {
+      "pain": "I get traffic but I'm not converting.",
+      "fix": "End-to-end paid funnels: landing page, Google and Meta Ads campaigns, real tracking with GTM and GA4, audience segmentation and creative iteration until CPA makes sense. Stop burning budget on clicks that don't buy."
+    },
+    "s4": {
+      "pain": "I have data but not decisions.",
+      "fix": "AI agents and pipelines (RAG, MCP) that read, summarize and act on your information — from competitor analysis to content generation and reporting. Decisions on data, not intuition."
+    },
+    "s5": {
+      "pain": "I want to use AI but I don't know where to start.",
+      "fix": "Honest diagnosis + a tailored system with LLMs (Claude, GPT, Gemini): we start where you save or sell the most, not where the hype is. No endless projects, no agency lock-in."
+    }
+  },
   "about": {
-    "title": "About",
-    "p1": "My path in tech spans more than 20 years: I've been coding for a long time and I combine the technical side with the business side. I founded a local-experiences startup in 2013 and have advised other projects on marketing and digital strategy. In parallel, I served as a civil servant in Spain for 16 years; in 2020 I moved to working full-time on technology and marketing — continuously learning and staying up to date, and applying everything to my own projects.",
-    "p2": "Today I run my own end-to-end practice — WhatsApp bots, voice AI agents, ad pipelines, paid funnels — while building a viral content research SaaS solo. Certified Implementer for AI Automation by Dania.ai. I'm driven by challenges: I learn any new technology fast and I'm obsessed with applying the latest to real problems as efficiently as possible.",
+    "title": "Why work with me",
+    "p1": "I come from two worlds that rarely cross: 16 years as a civil servant in the Spanish Government taught me to document processes, hit deadlines and work with rigor; 20+ years between technology and business taught me to build and to sell. For you, this means I won't just \"install AI\" — I understand how your business runs and where automation actually moves the needle.",
+    "p2": "Today I build end-to-end solutions for SMBs, professionals and indie products — WhatsApp bots, voice AI agents, AI pipelines and paid acquisition funnels — while building a viral content research SaaS solo on the side. Certified Implementer for AI Automation by Dania.ai. I learn any new technology fast and I apply the latest to real problems, not to demos.",
     "locationLabel": "Location",
     "locationValue": "Madrid · Hybrid or remote",
     "focusLabel": "Focus",
-    "focusValue": "AI automation · Paid growth",
-    "statusLabel": "Status",
-    "statusValue": "Open to work · Open to freelance"
+    "focusValue": "Customer acquisition, AI automation and predictable sales",
+    "statusLabel": "Availability",
+    "statusValue": "Open to work · Freelance and full-time"
   },
   "projects": {
     "title": "Selected projects",
-    "sub": "Production work and what I'm currently shipping.",
+    "sub": "What's already running in production and what I'm shipping now — told by the client outcome, not by the stack.",
     "live": "Live demo",
     "code": "GitHub",
     "case": "Case study",
     "p1": {
       "title": "Viral Content Research SaaS",
-      "desc": "Solo founder. A SaaS that detects viral patterns across YouTube and automates the full research workflow: source analysis, strategy, script and storyboard generation.",
+      "desc": "Helps YouTube creators publish content with a much higher chance of going viral by starting from patterns already validated by the market. Detects the real viral videos in a niche, extracts what made them work and generates ideas, scripts, hooks and copies ready to film. Built solo, end-to-end.",
       "tags": "FastAPI · Supabase + pgvector · Celery · Redis · Next.js · Multi-agent · Claude Code",
       "status": "Currently shipping"
     },
     "p2": {
       "title": "WhatsApp Lead Qualification Bot",
-      "desc": "Production bot that qualifies inbound leads end-to-end and books qualified appointments in Cal.com with zero human intervention.",
+      "desc": "Turns WhatsApp conversations into booked appointments, 24/7 and hands-off. The bot greets, qualifies the lead, books on Cal.com and only escalates to a human when needed — the team stops chasing messages and spends time closing.",
       "tags": "n8n · WhatsApp Business API · RAG · Cal.com",
       "status": "In production"
     },
     "p3": {
       "title": "Voice AI Booking Agent",
-      "desc": "Voice agent built with Vapi + RAG over private knowledge bases. Handles inbound calls, qualifies, and books appointments without a human in the loop.",
+      "desc": "Picks up every inbound call, qualifies and books — even after hours. No voicemail, no queues, no missed opportunities because nobody answered. Callers hang up with a confirmed appointment, you hang up with a full calendar.",
       "tags": "Vapi · RAG · Cal.com",
       "status": "In production"
     },
     "p4": {
       "title": "Multi-phase Ad Generation Pipeline",
-      "desc": "End-to-end pipeline for ad creatives: competitor ad scraping → visual analysis → script generation → video output. Fully automated.",
+      "desc": "Turns ad creative into a production line: studies your competitors' ads, extracts the patterns that already work, generates scripts and produces the final video. More creatives shipped per week, less dependence on freelancers and on inspiration.",
       "tags": "Apify · Gemini Vision · Claude · Veo 3 · n8n",
       "status": "In production"
     },
     "p5": {
       "title": "End-to-end Paid Acquisition Funnels",
-      "desc": "Two full sales funnels delivered: landing page, Google Ads campaigns, GTM tracking, GA4 dashboards, audience segmentation, keyword research and creative iteration.",
+      "desc": "Two full funnels delivered for clients: landing page, Google Ads campaigns, real tracking with GTM, GA4 dashboards, audience segmentation, keyword research and creative iteration. Traffic that no longer goes to waste and a measurable CPA you can optimize.",
       "tags": "Google Ads · GTM · GA4 · WordPress · Paid Media",
       "status": "Delivered"
     },
     "p6": {
       "title": "Lead Scraper — Google Maps",
-      "desc": "n8n sub-workflow that scrapes business leads from Google Maps, extracts and deduplicates emails, and pushes them to Sheets. Invocable from other automations.",
+      "desc": "Fills your B2B pipeline with zero manual work: scrapes businesses from Google Maps by sector and area, extracts and dedupes emails, and pushes them to Sheets, ready for cold outreach. Reusable from any other automation.",
       "tags": "n8n · Google Maps · Email extraction · Sheets",
       "status": "In production"
     }
   },
+  "process": {
+    "title": "How I work",
+    "sub": "Four steps designed so you see value early and always know where we stand.",
+    "step1Label": "01 · Diagnosis",
+    "step1Body": "A 30-min call to understand the real bottleneck, not the symptom. You leave with a clear map of the current process and what to automate first.",
+    "step2Label": "02 · System design",
+    "step2Body": "A concrete proposal: what gets automated, with which tools, what it costs and which metric you'll move. No fluff, no endless dependencies.",
+    "step3Label": "03 · Implementation",
+    "step3Body": "I build the system end-to-end, wired to your real tools and tested in production. You see progress along the way — no waiting for a \"big reveal\".",
+    "step4Label": "04 · Measure and iterate",
+    "step4Body": "I leave the tracking set up (GA4, dashboards, logs) so you know what's working. We iterate on data, not on opinions."
+  },
   "skills": {
     "title": "Stack",
-    "sub": "Tools and technologies I work with daily.",
+    "sub": "The pieces I use to build the systems that capture, sell and work for you.",
     "aiAutomation": "AI & Automation",
-    "backend": "Backend & Data",
-    "growth": "Growth & Marketing",
-    "tools": "Tools"
+    "fullStack": "Full-Stack Development",
+    "growth": "Growth & Marketing"
   },
   "contact": {
     "title": "Let's talk",
-    "sub": "Hiring full-time or looking for freelance help? Send a message or book a 30-min call.",
+    "sub": "Tell me what you want to solve. I reply personally and, if it's a fit, we book a 30-min call to map it out.",
     "nameLabel": "Name",
     "namePh": "Your name",
     "emailLabel": "Email",
@@ -89,7 +126,7 @@
     "phoneLabel": "Phone (optional)",
     "phonePh": "+34 6XX XXX XXX",
     "messageLabel": "Message",
-    "messagePh": "Tell me a little about what you're working on…",
+    "messagePh": "Tell me which process you want to automate or what outcome you're after…",
     "submit": "Send message",
     "sideLead": "Or reach out directly.",
     "sending": "Sending…",
@@ -114,9 +151,9 @@
     "placeholder": "Type your question...",
     "send": "Send",
     "error": "Sorry, something went wrong. Try again or email miguelcoseti@gmail.com",
-    "emptyLead": "Hi! I'm Miguel's AI assistant. Try one of these:",
-    "suggestion1": "What does Miguel do?",
-    "suggestion2": "What's his most recent project?",
-    "suggestion3": "Is he open to work?"
+    "emptyLead": "Hi! I'm Miguel's AI assistant. Ask me what you'd usually want to know before hiring:",
+    "suggestion1": "How can you help me get more leads?",
+    "suggestion2": "How long does it take to launch a WhatsApp bot?",
+    "suggestion3": "How much does an automation cost?"
   }
 }
