@@ -50,3 +50,6 @@ next-env.d.ts
 # Playwright MCP screenshots and snapshots (debug artifacts)
 /.playwright-mcp/
 /*.png
+
+# Local-only outreach prospect data (company names) — never commit
+/presentation-prospects.local.txt

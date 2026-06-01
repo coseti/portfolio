@@ -1,0 +1,137 @@
+{
+  "name": "Presentation video tracking",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "presentation-track",
+        "responseMode": "responseNode",
+        "options": {
+          "rawBody": true
+        }
+      },
+      "id": "11111111-1111-1111-1111-111111111111",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [240, 300],
+      "webhookId": "presentation-track"
+    },
+    {
+      "parameters": {
+        "jsCode": "const crypto = require('crypto');\n// n8n 2.x task runner sandboxes away 'process'; use n8n's $env instead.\nconst secret = $env.N8N_TRACK_SECRET;\nif (!secret) { throw new Error('N8N_TRACK_SECRET not readable (set it in n8n env + N8N_BLOCK_ENV_ACCESS_IN_NODE=false, then redeploy)'); }\nconst item = $input.first();\n// 'Raw Body' is enabled on the Webhook node, so the exact bytes the site signed\n// arrive as base64 binary. We must HMAC THOSE bytes, never a re-stringified JSON.\nconst raw = Buffer.from(item.binary.data.data, 'base64').toString('utf8');\nconst headers = item.json.headers || {};\nconst got = headers['x-webhook-signature-256'] || '';\nconst expected = crypto.createHmac('sha256', secret).update(raw).digest('hex');\nlet valid = false;\ntry {\n  const a = Buffer.from(got);\n  const b = Buffer.from(expected);\n  valid = a.length === b.length && crypto.timingSafeEqual(a, b);\n} catch (e) { valid = false; }\nconst data = JSON.parse(raw);\nreturn [{ json: Object.assign({ valid: valid }, data) }];"
+      },
+      "id": "22222222-2222-2222-2222-222222222222",
+      "name": "Verify signature",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [460, 300]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "cond-valid",
+              "leftValue": "={{ $json.valid }}",
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "33333333-3333-3333-3333-333333333333",
+      "name": "Signature valid?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [680, 300]
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "PASTE_YOUR_GOOGLE_SHEET_ID_HERE"
+        },
+        "sheetName": {
+          "__rl": true,
+          "mode": "name",
+          "value": "Sheet1"
+        },
+        "columns": {
+          "mappingMode": "autoMapInputData",
+          "value": {},
+          "matchingColumns": []
+        },
+        "options": {}
+      },
+      "id": "44444444-4444-4444-4444-444444444444",
+      "name": "Append to Sheet",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4,
+      "position": [920, 200],
+      "notesInFlow": true,
+      "notes": "Attach your Google Sheets OAuth2 credential and set documentId + sheetName. Header row must be: occurredAt | company | contact | event | percent | watchedSeconds | duration | token | source"
+    },
+    {
+      "parameters": {
+        "respondWith": "text",
+        "responseBody": "ok",
+        "options": {
+          "responseCode": 200
+        }
+      },
+      "id": "55555555-5555-5555-5555-555555555555",
+      "name": "Respond 200",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [1140, 200]
+    },
+    {
+      "parameters": {
+        "respondWith": "text",
+        "responseBody": "invalid signature",
+        "options": {
+          "responseCode": 401
+        }
+      },
+      "id": "66666666-6666-6666-6666-666666666666",
+      "name": "Respond 401",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [920, 420]
+    }
+  ],
+  "connections": {
+    "Webhook": {
+      "main": [[{ "node": "Verify signature", "type": "main", "index": 0 }]]
+    },
+    "Verify signature": {
+      "main": [[{ "node": "Signature valid?", "type": "main", "index": 0 }]]
+    },
+    "Signature valid?": {
+      "main": [
+        [{ "node": "Append to Sheet", "type": "main", "index": 0 }],
+        [{ "node": "Respond 401", "type": "main", "index": 0 }]
+      ]
+    },
+    "Append to Sheet": {
+      "main": [[{ "node": "Respond 200", "type": "main", "index": 0 }]]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "pinData": {}
+}
