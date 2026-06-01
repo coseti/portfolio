@@ -3,10 +3,8 @@ import {NextIntlClientProvider, hasLocale} from 'next-intl';
 import {notFound} from 'next/navigation';
 import {Inter, Fraunces, JetBrains_Mono} from 'next/font/google';
 import {routing} from '@/i18n/routing';
-import {Nav} from '@/components/nav';
 import {ThemeScript} from '@/components/theme-script';
 import {CalInit} from '@/components/cal-init';
-import {ChatWidget} from '@/components/chat-widget';
 import '../globals.css';
 
 const inter = Inter({
@@ -76,9 +74,7 @@ export default async function LocaleLayout({
       </head>
       <body className="min-h-full flex flex-col bg-background text-foreground">
         <NextIntlClientProvider>
-          <Nav />
           {children}
-          <ChatWidget />
           <CalInit />
         </NextIntlClientProvider>
       </body>

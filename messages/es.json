@@ -2,6 +2,17 @@
   "a11y": {
     "skip": "Saltar al contenido"
   },
+  "presentation": {
+    "greetingTeam": "Hola, equipo de {company}",
+    "greetingPerson": "Hola, {contact}",
+    "title": "Una breve presentación, y una propuesta para colaborar con vosotros en Londres",
+    "intro": "He grabado este vídeo corto especialmente para vuestro equipo. Es una presentación breve de quién soy, cómo trabajo y por qué me gustaría colaborar con vosotros de forma presencial, in situ en Londres. Si encaja, el siguiente paso es una llamada rápida.",
+    "unavailable": "Esta presentación ya no está disponible.",
+    "ctaTitle": "¿Te interesa? Hablemos.",
+    "ctaSub": "Reserva una videollamada de 30 minutos cuando mejor te venga. Sin compromiso, solo una conversación.",
+    "ctaBook": "Reservar videollamada",
+    "ctaLinkedin": "Conectar en LinkedIn"
+  },
   "nav": {
     "solutions": "Soluciones",
     "about": "Sobre mí",

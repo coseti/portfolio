@@ -26,19 +26,25 @@ npm run lint     # eslint
 ```
 app/
   [locale]/
-    layout.tsx          # html shell, fonts, ThemeScript, Nav, ChatWidget, CalInit
-    page.tsx            # composes the sections
+    layout.tsx          # html shell, fonts, ThemeScript, CalInit (global chrome)
     opengraph-image.tsx # dynamic OG image per locale
+    (site)/             # route group for the marketing site
+      layout.tsx        # adds Nav + ChatWidget
+      page.tsx          # composes the home sections
+    p/[token]/
+      page.tsx          # personalized presentation page (video + CTA), noindex
   api/
     chat/route.ts       # chat widget endpoint (OpenAI stream)
     contact/route.ts    # contact form -> signed forward to n8n webhook
+    track/route.ts      # presentation video events -> signed forward to n8n (separate webhook)
   sitemap.ts, robots.ts, globals.css
 components/
   nav.tsx, theme-script.tsx, theme-toggle.tsx, locale-switcher.tsx
   cal-init.tsx, cal-button.tsx, chat-widget.tsx
-  sections/             # hero, about, solutions, projects, process, skills, contact, footer
+  video-presentation.tsx # YouTube IFrame API + view tracking (client)
 data/
   projects.ts           # project metadata (ids, thumbs)
+  prospects.ts           # parse/lookup for /p/[token]; DATA lives in env (private)
   skills.ts             # skills grouped by category
   miguel-context.ts     # knowledge base injected into chat system prompt
 i18n/
@@ -78,6 +84,27 @@ legacy/                 # gitignored backup of the old static HTML portfolio
   `app/api/contact/route.ts`.
 - `migueldacal.com` (apex) 307-redirects to `www.migueldacal.com` (Vercel config).
 
+## Presentation pages (outreach video tracking)
+
+- `/p/[token]` serves a personalized video presentation to a single company.
+  Tokens are **opaque and non-guessable**. The token -> `{company, contact?}`
+  map is **private**: it lives in the `PRESENTATION_PROSPECTS` env var (JSON),
+  NOT in the repo, so target companies/tokens never go public. `data/prospects.ts`
+  only parses + looks it up. Unknown/removed token -> 404. To revoke/add a
+  company, edit the env var and redeploy.
+- The page greets by `contact` (first name) when present, else by `company`
+  team. It lives **outside** the `(site)` group so it has no portfolio nav.
+- The video is `NEXT_PUBLIC_PRESENTATION_VIDEO_ID` (a YouTube ID). Empty -> the
+  page shows an "unavailable" message instead of the player (no code change to
+  pull a video). The YouTube video must be **Unlisted**, not Private (private
+  can't be embedded). Removing it from the page does NOT remove it from YouTube.
+- View events (`open`, `play`, `progress_25/50/75`, `complete`, `close`) are
+  reported by `video-presentation.tsx` to `/api/track`, which validates the
+  token and HMAC-signs a forward to a **separate** n8n webhook
+  (`N8N_TRACK_*`). Never reuse the contact webhook for this.
+- This is GA4-free by design: the token in the URL identifies the company
+  server-side, so no cookies/consent banner are needed for the tracking.
+
 ## Gotchas (avoid these mistakes)
 
 - Next.js 16: it's `proxy.ts`, not `middleware.ts`.
@@ -93,6 +120,10 @@ legacy/                 # gitignored backup of the old static HTML portfolio
 See `.env.example` for required variables (no values committed):
 - `OPENAI_API_KEY` — chat widget
 - `N8N_CONTACT_WEBHOOK_URL`, `N8N_CONTACT_SECRET` — contact form forwarding
+- `N8N_TRACK_WEBHOOK_URL`, `N8N_TRACK_SECRET` — presentation video tracking
+  (separate n8n workflow from contact)
+- `NEXT_PUBLIC_PRESENTATION_VIDEO_ID` — YouTube ID for `/p/[token]` (public)
+- `PRESENTATION_PROSPECTS` — private JSON token->company map (server-only)
 
 `.env.local` is gitignored. **Never paste secrets into `.env.example`** — it is
 committed to the public repo. Secrets go in `.env.local` only.

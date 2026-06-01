@@ -2,6 +2,17 @@
   "a11y": {
     "skip": "Skip to content"
   },
+  "presentation": {
+    "greetingTeam": "Hi, {company} team",
+    "greetingPerson": "Hi {contact}",
+    "title": "A quick intro — and a proposal to work with you on the ground in London",
+    "intro": "I recorded this short video specifically for your team. It's a brief introduction to who I am, how I work and why I'd like to collaborate with you in person, on-site in London. If it resonates, the next step is a quick call.",
+    "unavailable": "This presentation is no longer available.",
+    "ctaTitle": "Interested? Let's talk.",
+    "ctaSub": "Book a 30-minute video call whenever suits you. No commitment, just a conversation.",
+    "ctaBook": "Book a video call",
+    "ctaLinkedin": "Connect on LinkedIn"
+  },
   "nav": {
     "solutions": "Solutions",
     "about": "About",
