@@ -66,7 +66,7 @@ export async function POST(req: Request) {
     duration: asNonNegativeInt(body.duration, 86400),
     percent: asNonNegativeInt(body.percent, 100),
     occurredAt: new Date().toISOString(),
-    source: 'portfolio-presentation'
+    source: 'migueldacal.com-presentation'
   };
 
   const rawBody = JSON.stringify(payload);

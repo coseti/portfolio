@@ -61,7 +61,7 @@ no las ve). Verifica con un Code node:
   "duration": 0,            // duración total del vídeo (s)
   "percent": 0,             // % visto (0-100)
   "occurredAt": "ISO-8601",
-  "source": "portfolio-presentation"
+  "source": "migueldacal.com-presentation"
 }
 ```
 

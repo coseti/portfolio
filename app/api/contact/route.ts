@@ -63,7 +63,7 @@ export async function POST(req: Request) {
     message: body.message.trim(),
     locale: body.locale === 'es' ? 'es' : 'en',
     submittedAt: new Date().toISOString(),
-    source: 'portfolio-contact-form'
+    source: 'migueldacal.com-contact-form'
   };
 
   const rawBody = JSON.stringify(payload);
