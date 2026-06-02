@@ -37,6 +37,7 @@ app/
     chat/route.ts       # chat widget endpoint (OpenAI stream)
     contact/route.ts    # contact form -> signed forward to n8n webhook
     track/route.ts      # presentation video events -> signed forward to n8n (separate webhook)
+    wa/route.ts         # 307-redirect to wa.me; phone kept server-side (anti-scraping)
   sitemap.ts, robots.ts, globals.css
 components/
   nav.tsx, theme-script.tsx, theme-toggle.tsx, locale-switcher.tsx
@@ -78,7 +79,10 @@ legacy/                 # gitignored backup of the old static HTML portfolio
 ## Product rules
 
 - The contact email is **never rendered in the UI** and there is **no `mailto:`
-  fallback** (anti-scraping). Contact is only via the form, LinkedIn, or Cal.com.
+  fallback** (anti-scraping). Contact is only via the form, LinkedIn, Cal.com or
+  WhatsApp. WhatsApp follows the same rule: the number is **never in the HTML** —
+  CTAs link to `/api/wa`, which 307-redirects to `wa.me` using `WHATSAPP_PHONE`
+  (server-only env). Never hardcode the number or a `wa.me` link in a component.
 - Contact form: name/email/message required, phone optional. Inline per-field
   validation with red message; server-side validation repeated in
   `app/api/contact/route.ts`.
@@ -124,6 +128,8 @@ See `.env.example` for required variables (no values committed):
   (separate n8n workflow from contact)
 - `NEXT_PUBLIC_PRESENTATION_VIDEO_ID` — YouTube ID for `/p/[token]` (public)
 - `PRESENTATION_PROSPECTS` — private JSON token->company map (server-only)
+- `WHATSAPP_PHONE` — WhatsApp number for the `/api/wa` redirect (server-only,
+  digits + country code, no `+`). Empty -> `/api/wa` redirects to home.
 
 `.env.local` is gitignored. **Never paste secrets into `.env.example`** — it is
 committed to the public repo. Secrets go in `.env.local` only.
