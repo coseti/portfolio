@@ -29,7 +29,8 @@
     "bio": "Sistemas de IA, automatización y growth pago para PYMEs y profesionales que quieren convertir su marketing en ingresos previsibles.",
     "ctaPrimary": "Conecta en LinkedIn",
     "ctaSecondary": "Ver soluciones",
-    "ctaTertiary": "Agendar llamada de 30 min"
+    "ctaTertiary": "Agendar llamada de 30 min",
+    "ctaWhatsapp": "Escríbeme por WhatsApp"
   },
   "solutions": {
     "title": "Qué resuelvo",
@@ -173,7 +174,7 @@
     "subtitle": "Asistente de IA entrenado con el perfil de Miguel",
     "placeholder": "Escribe tu pregunta...",
     "send": "Enviar",
-    "error": "Algo salió mal. Inténtalo de nuevo o escribe a miguelcoseti@gmail.com",
+    "error": "Algo salió mal. Inténtalo de nuevo o contáctame por el formulario o LinkedIn.",
     "emptyLead": "¡Hola! Soy el asistente de IA de Miguel. Pregúntame lo que sueles querer saber antes de contratar:",
     "suggestion1": "¿Cómo puedes ayudarme a captar más leads?",
     "suggestion2": "¿Cuánto tarda en estar listo un bot de WhatsApp?",
