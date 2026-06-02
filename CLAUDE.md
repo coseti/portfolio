@@ -19,7 +19,16 @@ auto-deploy from `master`.
 npm run dev      # dev server (Turbopack), localhost:3000
 npm run build    # production build
 npm run lint     # eslint
+npm test         # vitest (run once); npm run test:watch for watch mode
 ```
+
+Tests live next to the code (vitest, `@/` alias in `vitest.config.ts`). Node
+env by default for logic units (helpers, route handlers, data parsing). Client
+components are tested with React Testing Library — those files are `*.test.tsx`
+and opt into jsdom with a `// @vitest-environment jsdom` docblock; render them
+via `renderIntl` from `test/intl-render.tsx` (wraps in `NextIntlClientProvider`).
+External services (`fetch`, OpenAI SDK, YouTube IFrame API) are always mocked —
+tests never hit the network. Pure-presentational server sections aren't tested.
 
 ## Structure
 
