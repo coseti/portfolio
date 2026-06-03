@@ -142,11 +142,21 @@ export function VideoPresentation({
       });
     });
 
-    // Final beacon when the tab closes mid-video — captures partial watches
-    // that never reached a milestone. Not deduped: we want the latest position.
-    function handlePageHide() {
+    // Final beacon when the user leaves mid-video — captures partial watches
+    // that never reached a milestone. `pagehide` alone is unreliable on mobile:
+    // phones rarely "close" the tab, they background the app / lock the screen,
+    // and browsers may freeze the page without ever firing pagehide. The only
+    // event that fires reliably before that on mobile is visibilitychange ->
+    // hidden, so we drive the beacon off both. Guarded so the two events don't
+    // double-send on desktop close; rearmed when the page becomes visible again
+    // so a later real exit still reports the latest position.
+    let closeSent = false;
+
+    function sendCloseBeacon() {
+      if (closeSent) return;
       const {watchedSeconds, duration, percent} = metrics();
       if (watchedSeconds <= 0) return;
+      closeSent = true;
       const body = JSON.stringify({
         token,
         company,
@@ -160,11 +170,21 @@ export function VideoPresentation({
         new Blob([body], {type: 'application/json'})
       );
     }
-    window.addEventListener('pagehide', handlePageHide);
+
+    function handleVisibilityChange() {
+      if (document.visibilityState === 'hidden') {
+        sendCloseBeacon();
+      } else {
+        closeSent = false;
+      }
+    }
+    window.addEventListener('pagehide', sendCloseBeacon);
+    document.addEventListener('visibilitychange', handleVisibilityChange);
 
     return () => {
       cancelled = true;
-      window.removeEventListener('pagehide', handlePageHide);
+      window.removeEventListener('pagehide', sendCloseBeacon);
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
       stopTracking();
       playerRef.current?.destroy();
       playerRef.current = null;

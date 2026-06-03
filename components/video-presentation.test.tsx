@@ -114,4 +114,66 @@ describe('VideoPresentation tracking', () => {
     expect(beacon).toHaveBeenCalledTimes(1);
     expect(beacon.mock.calls[0][0]).toBe('/api/track');
   });
+
+  // Mobile rarely fires pagehide; visibilitychange -> hidden is the reliable
+  // signal when the user backgrounds the app or locks the screen.
+  function setVisibility(state: 'hidden' | 'visible') {
+    Object.defineProperty(document, 'visibilityState', {
+      value: state,
+      configurable: true
+    });
+    document.dispatchEvent(new Event('visibilitychange'));
+  }
+
+  it('sends a close beacon when the page is hidden (mobile background)', async () => {
+    const beacon = vi.fn();
+    (navigator as unknown as {sendBeacon: unknown}).sendBeacon = beacon;
+
+    renderVideo();
+    await waitFor(() => expect(PlayerMock).toHaveBeenCalled());
+
+    currentTime = 10;
+    duration = 100;
+    act(() => setVisibility('hidden'));
+
+    expect(beacon).toHaveBeenCalledTimes(1);
+    expect(beacon.mock.calls[0][0]).toBe('/api/track');
+
+    setVisibility('visible'); // restore for later tests
+  });
+
+  it('does not double-send close on visibilitychange followed by pagehide', async () => {
+    const beacon = vi.fn();
+    (navigator as unknown as {sendBeacon: unknown}).sendBeacon = beacon;
+
+    renderVideo();
+    await waitFor(() => expect(PlayerMock).toHaveBeenCalled());
+
+    currentTime = 10;
+    duration = 100;
+    act(() => setVisibility('hidden'));
+    act(() => window.dispatchEvent(new Event('pagehide')));
+
+    expect(beacon).toHaveBeenCalledTimes(1);
+
+    setVisibility('visible'); // restore for later tests
+  });
+
+  it('rearms close after becoming visible again, then hidden', async () => {
+    const beacon = vi.fn();
+    (navigator as unknown as {sendBeacon: unknown}).sendBeacon = beacon;
+
+    renderVideo();
+    await waitFor(() => expect(PlayerMock).toHaveBeenCalled());
+
+    currentTime = 10;
+    duration = 100;
+    act(() => setVisibility('hidden'));
+    act(() => setVisibility('visible'));
+    act(() => setVisibility('hidden'));
+
+    expect(beacon).toHaveBeenCalledTimes(2);
+
+    setVisibility('visible'); // restore for later tests
+  });
 });
